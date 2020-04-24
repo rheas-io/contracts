@@ -1,0 +1,35 @@
+{
+  "name": "@laress/contracts",
+  "version": "0.0.1",
+  "description": "Laress frameworks general contracts/interfaces",
+  "main": "index.js",
+  "keywords": [
+    "laress",
+    "contracts",
+    "interfaces",
+    "express",
+    "laravel",
+    "nodejs",
+    "framework"
+  ],
+  "scripts": {
+    "tsc": "tsc",
+    "copypackage": "cp -rf package.json build",
+    "build": "tsc && npm run copypackage",
+    "copypackage_dev": "cp -rf package.json build_dev",
+    "build-dev": "tsc --outDir ./build_dev && npm run copypackage_dev"
+  },
+  "devDependencies": {
+    "typescript": "^3.8.3"
+  },
+  "author": "Kalesh Kaladharan",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/laress-io/contracts.git"
+  },
+  "bugs": {
+    "url": "https://github.com/laress-io/contracts/issues"
+  },
+  "homepage": "https://github.com/laress-io/contracts#readme"
+}
