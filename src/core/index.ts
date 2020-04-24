@@ -1,3 +1,4 @@
+import { IConfig } from "./config";
 import { InstanceHandler } from "./instanceHandler"
 
-export { InstanceHandler }
+export { IConfig, InstanceHandler }
