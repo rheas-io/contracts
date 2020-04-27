@@ -1,4 +1,8 @@
+import { IRequest } from "../core/request";
+
 export interface IRoute {
+
+    matches(request: IRequest): boolean;
 
     routes(...routes: IRoute[]): IRoute;
 
