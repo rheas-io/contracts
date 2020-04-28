@@ -1,2 +1,2 @@
-import { IUriComponent } from "./uriComponent";
+import { IUriComponent } from "./component";
 export { IUriComponent };

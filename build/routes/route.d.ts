@@ -10,6 +10,7 @@ export interface IRoute {
     setParent(route: IRoute): void;
     getName(): string;
     getPath(): string;
+    getDomain(): string;
     getParent(): IRoute | null;
     hasParent(): boolean;
 }
