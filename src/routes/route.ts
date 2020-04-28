@@ -14,6 +14,8 @@ export interface IRoute {
 
     prefix(name: string): IRoute;
 
+    domain(domain: string): IRoute;
+
     middleware(middlewares: string | string[]): IRoute;
 
     setParent(route: IRoute): void;
