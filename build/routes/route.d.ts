@@ -1,6 +1,5 @@
-import { IRequest } from "../core/request";
+import { IUriComponent } from "./uri";
 export interface IRoute {
-    matches(request: IRequest): boolean;
     routes(...routes: IRoute[]): IRoute;
     routeMiddlewares(): string[];
     routePath(): string;
@@ -13,5 +12,6 @@ export interface IRoute {
     getName(): string;
     getPath(): string;
     getParent(): IRoute | null;
+    getUriComponents(): IUriComponent[];
     hasParent(): boolean;
 }
