@@ -7,5 +7,11 @@ export interface IUriComponent {
      */
     component: string;
 
+    /**
+     * Compares this uriComponent with another one. Returns true
+     * if the component values are same.
+     * 
+     * @param uriComponent 
+     */
     equals(uriComponent: IUriComponent): boolean;
 }
