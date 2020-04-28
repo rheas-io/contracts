@@ -10,6 +10,8 @@ export interface IRoute {
 
     routePath(): string;
 
+    routeDomain(): string;
+
     name(name: string): IRoute;
 
     prefix(name: string): IRoute;
@@ -23,8 +25,6 @@ export interface IRoute {
     getName(): string;
 
     getPath(): string;
-
-    getDomain(): string;
 
     getParent(): IRoute | null;
 

@@ -4,6 +4,7 @@ export interface IRoute {
     routes(...routes: IRoute[]): IRoute;
     routeMiddlewares(): string[];
     routePath(): string;
+    routeDomain(): string;
     name(name: string): IRoute;
     prefix(name: string): IRoute;
     domain(domain: string): IRoute;
@@ -11,7 +12,6 @@ export interface IRoute {
     setParent(route: IRoute): void;
     getName(): string;
     getPath(): string;
-    getDomain(): string;
     getParent(): IRoute | null;
     hasParent(): boolean;
 }
