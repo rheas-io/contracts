@@ -22,6 +22,8 @@ export interface IRoute {
 
     getPath(): string;
 
+    getDomain(): string;
+
     getParent(): IRoute | null;
 
     hasParent(): boolean;
