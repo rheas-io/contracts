@@ -10,7 +10,7 @@ export interface IRoute {
 
     routeDomain(): string;
 
-    routeSecureOnly(): boolean;
+    routeSecure(): boolean;
 
     methods(methods: string | string[]): IRoute;
 
@@ -24,7 +24,7 @@ export interface IRoute {
 
     middleware(middlewares: string | string[]): IRoute;
 
-    secureOnly(): IRoute;
+    secure(): IRoute;
 
     setParent(route: IRoute): void;
 
@@ -37,6 +37,8 @@ export interface IRoute {
     getParent(): IRoute | null;
 
     getUriComponents(): IUriComponent[];
+
+    isEndpoint(): boolean;
 
     hasParent(): boolean;
 }
