@@ -3,6 +3,12 @@ import { IncomingMessage } from "http";
 import { IUriComponent } from "../routes/uri";
 export interface IRequest extends IncomingMessage {
     /**
+     * Checks if the request came through a secure channel
+     *
+     * @return boolean
+     */
+    isSecure(): boolean;
+    /**
      * Gets the request schema https/http
      *
      * @return string
