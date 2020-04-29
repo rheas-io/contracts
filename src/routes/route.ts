@@ -12,6 +12,8 @@ export interface IRoute {
 
     routeSecure(): boolean;
 
+    routeEndpoints(): IRoute[];
+
     methods(methods: string | string[]): IRoute;
 
     action(action: string): IRoute;

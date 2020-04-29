@@ -5,6 +5,7 @@ export interface IRoute {
     routePath(): string;
     routeDomain(): string;
     routeSecure(): boolean;
+    routeEndpoints(): IRoute[];
     methods(methods: string | string[]): IRoute;
     action(action: string): IRoute;
     name(name: string): IRoute;
