@@ -36,7 +36,16 @@ export interface IException {
      * @param response 
      * @param request 
      */
-    bindToResponse(response: IResponse, request?: IRequest): IResponse | void;
+    bindToResponse(response: IResponse, request?: IRequest): IResponse;
+
+    /**
+     * Returns an error object that can be send as response body.
+     * This object contains name, message, status and optionally the stack trace 
+     * if app is in debug mode.
+     * 
+     * @returns object
+     */
+    getErrorObject(): object;
 
     /**
      * Returns the stack trace in a string array, which can be either
