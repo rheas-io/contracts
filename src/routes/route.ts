@@ -10,6 +10,10 @@ export interface IRoute {
 
     routeDomain(): string;
 
+    methods(methods: string | string[]): IRoute;
+
+    action(action: string): IRoute;
+
     name(name: string): IRoute;
 
     prefix(name: string): IRoute;

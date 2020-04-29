@@ -4,6 +4,8 @@ export interface IRoute {
     routeMiddlewares(): string[];
     routePath(): string;
     routeDomain(): string;
+    methods(methods: string | string[]): IRoute;
+    action(action: string): IRoute;
     name(name: string): IRoute;
     prefix(name: string): IRoute;
     domain(domain: string): IRoute;
