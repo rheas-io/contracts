@@ -1,3 +1,6 @@
+import { IRequest } from "../core/request";
+import { IResponse } from "../core/response";
+
 export interface IException {
     /**
      * Name of this error
@@ -28,7 +31,19 @@ export interface IException {
     status: number;
 
     /**
-     * Returns the exception as a json object
+     * Binds the exception to the response.
+     * 
+     * @param response 
+     * @param request 
      */
-    getErrors(): object;
+    bindToResponse(response: IResponse, request?: IRequest): IResponse | void;
+
+    /**
+     * Returns the stack trace in a string array, which can be either
+     * send along with a json response (on debug) or can be used to 
+     * write to a log file.
+     * 
+     * @returns array
+     */
+    getPrintableTrace(): string[];
 }
