@@ -20,6 +20,8 @@ export interface IRoute {
 
     setParent(route: IRoute): void;
 
+    getMethods(): string[];
+
     getName(): string;
 
     getPath(): string;

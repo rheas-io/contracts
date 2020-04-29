@@ -9,6 +9,7 @@ export interface IRoute {
     domain(domain: string): IRoute;
     middleware(middlewares: string | string[]): IRoute;
     setParent(route: IRoute): void;
+    getMethods(): string[];
     getName(): string;
     getPath(): string;
     getParent(): IRoute | null;

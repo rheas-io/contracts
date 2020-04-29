@@ -2,7 +2,6 @@
 import { IncomingMessage } from "http";
 import { IUriComponent } from "../routes/uri";
 export interface IRequest extends IncomingMessage {
-    _uriComponents: IUriComponent[];
     /**
      * Gets the request schema https/http
      *
