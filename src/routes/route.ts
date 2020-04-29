@@ -10,6 +10,8 @@ export interface IRoute {
 
     routeDomain(): string;
 
+    routeSecureOnly(): boolean;
+
     methods(methods: string | string[]): IRoute;
 
     action(action: string): IRoute;
@@ -21,6 +23,8 @@ export interface IRoute {
     domain(domain: string): IRoute;
 
     middleware(middlewares: string | string[]): IRoute;
+
+    secureOnly(): IRoute;
 
     setParent(route: IRoute): void;
 
