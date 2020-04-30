@@ -1,4 +1,5 @@
 import { IConfig } from "./config";
+import { IContainer } from "./container";
 import { InstanceHandler } from "./instanceHandler"
 
-export { IConfig, InstanceHandler }
+export { IConfig, IContainer, InstanceHandler }
