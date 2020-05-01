@@ -1,4 +1,4 @@
-import { IApp } from "./app";
+import { IContainer } from "./container";
 export interface InstanceHandler<T> {
-    (app?: IApp): T;
+    (app?: IContainer): T;
 }
