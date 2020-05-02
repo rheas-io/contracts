@@ -1,3 +1,3 @@
 export interface IConfigManager {
-    config<T>(key: string, defaultValue?: T): T | null;
+    get<T>(key: string, defaultValue?: T): T | null;
 }
