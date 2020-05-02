@@ -9,6 +9,7 @@ export interface IApp extends IContainer, IServer {
     bootService(service: IServiceProvider): void;
     isDeferredService(name: string): boolean;
     config(key: string): any;
+    getConfigDir(): string;
     getRootPath(): string;
     getAssetPath(): string;
 }
