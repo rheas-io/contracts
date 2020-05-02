@@ -1,3 +1,4 @@
+import { ClassOf } from "./class";
 import { IServer } from "./server";
 import { IContainer } from "./container";
 import { IServiceProvider } from "./serviceProvider";
@@ -8,7 +9,7 @@ export interface IApp extends IContainer, IServer {
 
     boot(): void;
 
-    registerService(name: string, service: IServiceProvider): void;
+    registerService(name: string, service: ClassOf<IServiceProvider>): void;
 
     bootService(service: IServiceProvider): void;
 
