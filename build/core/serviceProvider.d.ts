@@ -13,6 +13,18 @@ export interface IServiceProvider {
      */
     boot(): void;
     /**
+     * Sets the registration status to the value
+     *
+     * @param status
+     */
+    setRegistered(status: boolean): void;
+    /**
+     * Sets the booted status to the value
+     *
+     * @param status
+     */
+    setBooted(status: boolean): void;
+    /**
      * Returns the registered status of this provider
      *
      * @returns boolean
