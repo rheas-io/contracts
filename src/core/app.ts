@@ -8,8 +8,6 @@ export interface IApp extends IContainer, IServer {
 
     boot(): void;
 
-    setConfigDir(folder: string): IApp;
-
     registerService(name: string, service: IServiceProvider): void;
 
     bootService(service: IServiceProvider): void;
@@ -17,8 +15,6 @@ export interface IApp extends IContainer, IServer {
     isDeferredService(name: string): boolean;
 
     config<T>(key: string, defaultValue?: T): T | null;
-
-    getConfigDir(): string;
 
     getRootPath(): string;
 
