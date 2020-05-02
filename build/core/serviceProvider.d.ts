@@ -12,4 +12,16 @@ export interface IServiceProvider {
      * function.
      */
     boot(): void;
+    /**
+     * Returns the registered status of this provider
+     *
+     * @returns boolean
+     */
+    isRegistered(): boolean;
+    /**
+     * Returns the boot status of this provider
+     *
+     * @returns boolean
+     */
+    isBooted(): boolean;
 }

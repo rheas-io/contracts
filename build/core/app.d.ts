@@ -2,9 +2,8 @@ import { ClassOf } from "./class";
 import { IServer } from "./server";
 import { IContainer } from "./container";
 import { IServiceProvider } from "./serviceProvider";
-export interface IApp extends IContainer, IServer {
+export interface IApp extends IContainer, IServer, IServiceProvider {
     startApp(): void;
-    boot(): void;
     registerService(name: string, service: ClassOf<IServiceProvider>): void;
     bootService(service: IServiceProvider): void;
     isDeferredService(name: string): boolean;
