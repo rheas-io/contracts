@@ -16,7 +16,7 @@ export interface IApp extends IContainer, IServer {
 
     isDeferredService(name: string): boolean;
 
-    config(key: string): any;
+    config<T>(key: string, defaultValue?: T): T | null;
 
     getConfigDir(): string;
 
