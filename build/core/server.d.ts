@@ -2,6 +2,10 @@
 import { IncomingMessage, ServerResponse } from "http";
 export interface IServer {
     /**
+     * Starts server using node's http module.
+     */
+    enableHttpServer(): IServer;
+    /**
      * Starts server using node's https module. To start https server,
      * the application config file must contain the certificate file
      * paths.
