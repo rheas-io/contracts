@@ -7,7 +7,11 @@ export interface IApp extends IContainer, IServer, IServiceProvider {
 
     startApp(): void;
 
-    registerService(name: string, service: ClassOf<IServiceProvider>): void;
+    registerService(name: string, serviceProvider: IServiceProvider): void;
+
+    registerServiceByName(key: string): void;
+
+    isServiceLoaded(name: string): boolean;
 
     bootService(service: IServiceProvider): void;
 
