@@ -27,5 +27,5 @@ export interface IContainer {
      * @param key 
      * @param defaultValue 
      */
-    get<T = any>(key: string, defaultValue?: T): T;
+    get<T = any>(key: string, defaultValue: T | null): T | null;
 }
