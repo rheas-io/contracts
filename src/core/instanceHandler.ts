@@ -1,5 +1,5 @@
 import { IContainer } from "./container";
 
-export interface InstanceHandler<T> {
-    (app?: IContainer): T;
+export interface InstanceHandler {
+    (app?: IContainer): void;
 }
