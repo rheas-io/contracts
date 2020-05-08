@@ -1,6 +1,7 @@
+import { IManager } from "./manager";
 import { InstanceHandler } from "./instanceHandler";
 
-export interface IContainer {
+export interface IContainer extends IManager {
 
     /**
      * Property to call when a singleton has to be added to
@@ -20,12 +21,4 @@ export interface IContainer {
      * @param instance 
      */
     instance<T>(name: string, instance: T): T;
-
-    /**
-     * Returns the binding stored in this container.
-     * 
-     * @param key 
-     * @param defaultValue 
-     */
-    get<T>(key: string, defaultValue: T | null): T | null;
 }
