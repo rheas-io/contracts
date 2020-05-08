@@ -16,7 +16,7 @@ export interface IContainer extends IManager {
      * @param callback
      * @param singleton
      */
-    binds(name: string, resolver: InstanceHandler, singleton: boolean): IContainerInstance;
+    bind(name: string, resolver: InstanceHandler, singleton: boolean): IContainerInstance;
     /**
      * Adds an instance to this container. Any type of object can
      * be passed as an argument and returns the same after adding it to
