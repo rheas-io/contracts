@@ -1,7 +1,5 @@
-import { ClassOf } from "./class";
 import { IServer } from "./server";
-import { IContainer } from "./container";
-import { IServiceProvider } from "./serviceProvider";
+import { IContainer } from "../container/container";
 
 export interface IApp extends IContainer, IServer {
 
