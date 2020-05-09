@@ -1,4 +1,4 @@
-import { IServer } from "./server";
+import { IApp } from "./app";
 import { IManager } from "./manager";
 import { IServerCreator } from "./serverCreator";
-export { IServer, IManager, IServerCreator, };
+export { IApp, IManager, IServerCreator, };
