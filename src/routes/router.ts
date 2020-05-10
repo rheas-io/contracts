@@ -7,9 +7,9 @@ export interface IRouter extends IRouteRegistrar {
 
     cacheRoutes(): void;
 
-    processRequest(request: IRequest, response: IResponse): void;
+    processRequest(request: IRequest, response: IResponse): IResponse;
 
-    matchingRoute(request: IRequest, response: IResponse): IRoute;
+    matchingRoute(request: IRequest): IRoute | null;
 
     dispatchToRoute(route: IRoute, request: IRequest, response: IResponse): IResponse;
 
