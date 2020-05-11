@@ -9,9 +9,7 @@ export interface IRouter extends IRouteRegistrar {
 
     processRequest(request: IRequest, response: IResponse): IResponse;
 
-    matchingRoute(request: IRequest): IRoute | null;
-
-    dispatchToRoute(route: IRoute, request: IRequest, response: IResponse): IResponse;
+    matchingRoute(request: IRequest): IRoute;
 
     addRegistrar(name: string, registrar: IRouteRegistrar): void;
 
