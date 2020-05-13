@@ -1,3 +1,4 @@
 import { IException } from "./exception";
+import { IExceptionHandler } from "./handler";
 
-export { IException }
+export { IException, IExceptionHandler }
