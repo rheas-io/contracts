@@ -7,5 +7,5 @@ export interface IResponse extends ServerResponse {
      * @param to
      * @param status
      */
-    redirect(to: string, status: number): IResponse;
+    redirect(to: string, status?: number): IResponse;
 }
