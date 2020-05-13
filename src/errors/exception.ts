@@ -33,9 +33,8 @@ export interface IException {
     bindToResponse(response: IResponse): IResponse;
 
     /**
-     * Returns an error object that can be send as response body.
-     * This object contains name, message, status and optionally the stack trace 
-     * if app is in debug mode.
+     * Sets the error object on response body. This object contains error message, status and 
+     * optionally the stack trace if the app is in debug mode.
      * 
      * @param req
      * @param res
