@@ -1,7 +1,15 @@
+import { IApp } from "./app";
 import { IncomingMessage } from "http";
 import { IUriComponent } from "../routes/uri";
 
 export interface IRequest extends IncomingMessage {
+
+    /**
+     * Boots the request with services and containers.
+     * 
+     * @param app 
+     */
+    boot(app: IApp): IRequest;
 
     /**
      * Checks if the request came through a secure channel
