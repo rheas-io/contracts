@@ -68,4 +68,11 @@ export interface IRequest extends IncomingMessage {
      * @return string
      */
     getRealMethod(): string;
+
+    /**
+     * Returns true if the request needs Json response.
+     * 
+     * @return boolean
+     */
+    acceptsJson(): boolean;
 }
