@@ -10,6 +10,12 @@ export interface IRequest extends IncomingMessage {
      */
     boot(app: IApp): IRequest;
     /**
+     * Returns the core app instance.
+     *
+     * @returns
+     */
+    app(): IApp | undefined;
+    /**
      * Checks if the request came through a secure channel
      *
      * @return boolean
