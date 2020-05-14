@@ -5,5 +5,5 @@ export interface IManager {
      * @param key 
      * @param defaultValue 
      */
-    get<T>(key: string, defaultValue: T | null): T | null;
+    get<T>(key: string, defaultValue?: T | null): T | null;
 }
