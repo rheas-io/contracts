@@ -16,7 +16,7 @@ export interface IRequest extends IncomingMessage {
      * 
      * @returns
      */
-    app(): IApp | undefined;
+    app(): IApp | null;
 
     /**
      * Checks if the request came through a secure channel
