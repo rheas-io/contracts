@@ -1,6 +1,6 @@
-import { IRoutePipe } from "./routePipe";
 import { IRequest } from "../core/request";
 import { IResponse } from "../core/response";
+import { IRequestHandler } from "./requestHandler";
 export interface IRoutePipeHandler {
     /**
      * Request/Response pipe handler. The parameter next is a stack of
@@ -12,5 +12,5 @@ export interface IRoutePipeHandler {
      * @param next
      * @param params
      */
-    (req: IRequest, res: IResponse, next: IRoutePipe, ...params: any): Promise<IResponse>;
+    (req: IRequest, res: IResponse, next: IRequestHandler, ...params: any): Promise<IResponse>;
 }
