@@ -13,6 +13,7 @@ export interface IRoute {
     prefix(name: string): IRoute;
     domain(domain: string): IRoute;
     middleware(middlewares: string | string[]): IRoute;
+    withoutMiddleware(middlewares: string | string[]): IRoute;
     secure(): IRoute;
     setParent(route: IRoute): void;
     getMethods(): string[];
@@ -21,6 +22,7 @@ export interface IRoute {
     getAction(): string | IRequestHandler;
     getParent(): IRoute | null;
     getUriComponents(): IUriComponent[];
+    getExcludedMiddlewares(): string[];
     isEndpoint(): boolean;
     hasParent(): boolean;
 }

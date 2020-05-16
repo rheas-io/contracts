@@ -27,6 +27,8 @@ export interface IRoute {
 
     middleware(middlewares: string | string[]): IRoute;
 
+    withoutMiddleware(middlewares: string | string[]): IRoute;
+
     secure(): IRoute;
 
     setParent(route: IRoute): void;
@@ -42,6 +44,8 @@ export interface IRoute {
     getParent(): IRoute | null;
 
     getUriComponents(): IUriComponent[];
+
+    getExcludedMiddlewares(): string[]; 
 
     isEndpoint(): boolean;
 
