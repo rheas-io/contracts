@@ -1,3 +1,4 @@
 import { IUriComponent } from "./component";
+import { IRequestComponent } from "./requestComponent";
 
-export { IUriComponent };
+export { IUriComponent, IRequestComponent };
