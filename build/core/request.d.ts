@@ -1,7 +1,7 @@
 /// <reference types="node" />
 import { IApp } from "./app";
 import { IncomingMessage } from "http";
-import { IUriComponent } from "../routes/uri";
+import { IRequestComponent } from "../routes/uri";
 export interface IRequest extends IncomingMessage {
     /**
      * Boots the request with services and containers.
@@ -45,7 +45,7 @@ export interface IRequest extends IncomingMessage {
      *
      * @return array
      */
-    getPathComponents(): IUriComponent[];
+    getPathComponents(): IRequestComponent[];
     /**
      * Returns the full url of the request including scheme, host,
      * path and query string.
