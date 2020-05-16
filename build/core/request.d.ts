@@ -16,6 +16,13 @@ export interface IRequest extends IncomingMessage {
      */
     app(): IApp | null;
     /**
+     * Returns the params of this request as an array in the
+     * same order.
+     *
+     * @returns array
+     */
+    params(): string[];
+    /**
      * Checks if the request came through a secure channel
      *
      * @return boolean
