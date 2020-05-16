@@ -1,4 +1,5 @@
 import { IUriComponent } from "./uri";
+import { IRequestHandler } from "./requestHandler";
 export interface IRoute {
     routes(...routes: IRoute[]): IRoute;
     routeMiddlewares(): string[];
@@ -7,7 +8,7 @@ export interface IRoute {
     routeSecure(): boolean;
     routeEndpoints(): IRoute[];
     methods(methods: string | string[]): IRoute;
-    action(action: string): IRoute;
+    action(action: string | IRequestHandler): IRoute;
     name(name: string): IRoute;
     prefix(name: string): IRoute;
     domain(domain: string): IRoute;
@@ -17,6 +18,7 @@ export interface IRoute {
     getMethods(): string[];
     getName(): string;
     getPath(): string;
+    getAction(): string | IRequestHandler;
     getParent(): IRoute | null;
     getUriComponents(): IUriComponent[];
     isEndpoint(): boolean;

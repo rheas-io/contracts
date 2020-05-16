@@ -1,4 +1,5 @@
 import { IUriComponent } from "./uri";
+import { IRequestHandler } from "./requestHandler";
 
 export interface IRoute {
 
@@ -16,7 +17,7 @@ export interface IRoute {
 
     methods(methods: string | string[]): IRoute;
 
-    action(action: string): IRoute;
+    action(action: string | IRequestHandler): IRoute;
 
     name(name: string): IRoute;
 
@@ -35,6 +36,8 @@ export interface IRoute {
     getName(): string;
 
     getPath(): string;
+
+    getAction(): string | IRequestHandler;
 
     getParent(): IRoute | null;
 
