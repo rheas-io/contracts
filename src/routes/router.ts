@@ -3,7 +3,7 @@ import { IRequest } from "../core/request";
 import { IResponse } from "../core/response";
 import { IRouteRegistrar } from "./routeRegistrar";
 
-export type INameParam = [string, string[]];
+export type INameParams = [string, string[]];
 
 export interface IRouter extends IRouteRegistrar {
 
