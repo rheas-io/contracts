@@ -13,13 +13,6 @@ export interface IRequest extends IncomingMessage, IContainer {
     boot(app: IApp): IRequest;
 
     /**
-     * Returns the core app instance.
-     * 
-     * @returns
-     */
-    app(): IApp | null;
-
-    /**
      * Returns the params of this request as an array in the
      * same order.
      * 
