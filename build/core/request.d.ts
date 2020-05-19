@@ -1,8 +1,9 @@
 /// <reference types="node" />
 import { IApp } from "./app";
 import { IncomingMessage } from "http";
+import { IContainer } from "../container";
 import { IRequestComponent } from "../routes/uri";
-export interface IRequest extends IncomingMessage {
+export interface IRequest extends IncomingMessage, IContainer {
     /**
      * Boots the request with services and containers.
      *
