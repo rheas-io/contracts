@@ -1,4 +1,3 @@
-import { IRequest } from "./request";
 import { ServerResponse } from "http";
 
 export interface IResponse extends ServerResponse {
@@ -13,6 +12,7 @@ export interface IResponse extends ServerResponse {
      * Sets the response content/body that has to be send.
      * 
      * @param content 
+     * @returns IResponse 
      */
     setContent(content: any): IResponse;
 
@@ -20,9 +20,9 @@ export interface IResponse extends ServerResponse {
      * Prepares the response with necessary headers and status
      * code.
      * 
-     * @param request 
+     * @returns IResponse 
      */
-    prepareResponse(request: IRequest): IResponse;
+    prepareResponse(): IResponse;
 
     /**
      * Creates a redirect response.
