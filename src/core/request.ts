@@ -14,6 +14,13 @@ export interface IRequest extends IncomingMessage, IContainer, IAttributeManager
     boot(app: IApp): IRequest;
 
     /**
+     * Sets the format that has to be used to send response.
+     * 
+     * @param format 
+     */
+    setFormat(format: string): IRequest;
+
+    /**
      * Returns the params of this request as an array in the
      * same order.
      * 
@@ -27,6 +34,20 @@ export interface IRequest extends IncomingMessage, IContainer, IAttributeManager
      * @return boolean
      */
     isSecure(): boolean;
+
+    /**
+     * Returns true if the request needs Json response.
+     * 
+     * @return boolean
+     */
+    acceptsJson(): boolean;
+
+    /**
+     * Returns true if the request is json type.
+     * 
+     * @return boolean
+     */
+    isJson(): boolean;
 
     /**
      * Gets the request schema https/http
@@ -88,9 +109,17 @@ export interface IRequest extends IncomingMessage, IContainer, IAttributeManager
     getRealMethod(): string;
 
     /**
-     * Returns true if the request needs Json response.
+     * Gets the request format set by the application.
      * 
-     * @return boolean
+     * @return string
      */
-    acceptsJson(): boolean;
+    getFormat(): string;
+
+    /**
+     * Returns the mimetype of the format.
+     * 
+     * @param format 
+     * @returns string
+     */
+    getMimeType(format: string): string;
 }
