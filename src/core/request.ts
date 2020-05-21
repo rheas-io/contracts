@@ -111,9 +111,10 @@ export interface IRequest extends IncomingMessage, IContainer, IAttributeManager
     /**
      * Gets the request format set by the application.
      * 
-     * @return string
+     * @param defaulValue
+     * @returns string
      */
-    getFormat(): string;
+    getFormat(defaulValue?: string): string;
 
     /**
      * Returns the mimetype of the format.
