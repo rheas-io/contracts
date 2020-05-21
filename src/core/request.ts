@@ -117,10 +117,10 @@ export interface IRequest extends IncomingMessage, IContainer, IAttributeManager
     getFormat(defaulValue?: string): string;
 
     /**
-     * Returns the mimetype of the format.
+     * Returns the mimetype of the format. null if no mime found.
      * 
      * @param format 
      * @returns string
      */
-    getMimeType(format: string): string;
+    getMimeType(format: string): string | null;
 }
