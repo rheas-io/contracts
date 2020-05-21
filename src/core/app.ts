@@ -5,7 +5,7 @@ export interface IApp extends IContainer, IServer {
 
     startApp(): void;
 
-    config(key: string): any;
+    config(key: string, defaultValue?: any): any;
 
     getRootPath(): string;
 
