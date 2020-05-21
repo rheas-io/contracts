@@ -4,8 +4,10 @@ export interface IResponse extends ServerResponse {
     /**
      * Sends the response and ends the stream. This completes
      * a request cycle.
+     *
+     * @returns IResponse
      */
-    send(): void;
+    send(): IResponse;
     /**
      * Sets the response content/body that has to be send.
      *
