@@ -3,6 +3,7 @@ import { IRequestHandler } from "./requestHandler";
 export interface IRoute {
     routes(...routes: IRoute[]): IRoute;
     routeMiddlewares(): string[];
+    middlewaresToResolve(): string[];
     routePath(): string;
     routeDomain(): string;
     routeSecure(): boolean;

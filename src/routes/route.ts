@@ -7,6 +7,8 @@ export interface IRoute {
 
     routeMiddlewares(): string[];
 
+    middlewaresToResolve(): string[];
+
     routePath(): string;
 
     routeDomain(): string;
@@ -45,7 +47,7 @@ export interface IRoute {
 
     getUriComponents(): IUriComponent[];
 
-    getExcludedMiddlewares(): string[]; 
+    getExcludedMiddlewares(): string[];
 
     isEndpoint(): boolean;
 
