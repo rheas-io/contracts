@@ -11,6 +11,13 @@ export interface IResponse extends ServerResponse {
     send(): IResponse;
 
     /**
+     * Alias of setContent.
+     * 
+     * @param content 
+     */
+    set(content:any):IResponse;
+
+    /**
      * Sets the response content/body that has to be send.
      * 
      * @param content 
