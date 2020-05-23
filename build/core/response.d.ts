@@ -22,6 +22,20 @@ export interface IResponse extends ServerResponse {
      */
     setContent(content: any): IResponse;
     /**
+     * Sets an empty string as content and removes all the headers
+     * related to content.
+     *
+     * @returns IResponse
+     */
+    setEmptyContent(): IResponse;
+    /**
+     * Sets status as 304 and removes content and headers that are not
+     * needed in a non-modified response.
+     *
+     * @returns IResponse
+     */
+    setNotModified(): IResponse;
+    /**
      * Prepares the response with necessary headers and status
      * code.
      *
@@ -35,4 +49,29 @@ export interface IResponse extends ServerResponse {
      * @param status
      */
     redirect(to: string, status?: number): IResponse;
+    /**
+     * Returns the headers that are not needed in Not-Modified
+     * responses.
+     *
+     * @return array
+     */
+    headersNotNeededInNotModified(): string[];
+    /**
+     * Checks if the status given is a redirect status or not.
+     *
+     * @returns boolean
+     */
+    isRedirectStatus(status: number): boolean;
+    /**
+     * Checks if the response is informational or not. 100<status_code<200
+     *
+     * @return boolean
+     */
+    hasInformationalStatus(): boolean;
+    /**
+     * Checks if the response is empty ie 204-No Content or 304-Not Modified
+     *
+     * @returns boolean
+     */
+    hasEmptyStatus(): boolean;
 }
