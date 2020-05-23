@@ -1,5 +1,6 @@
 import { IApp } from "./app";
 import { IncomingMessage } from "http";
+import { IResponse } from "./response";
 import { IContainer } from "../container";
 import { IAttributeManager } from "./attribute";
 import { IRequestComponent } from "../routes/uri";
@@ -10,8 +11,9 @@ export interface IRequest extends IncomingMessage, IContainer, IAttributeManager
      * Boots the request with services and containers.
      * 
      * @param app 
+     * @param response
      */
-    boot(app: IApp): IRequest;
+    boot(app: IApp, response: IResponse): IRequest;
 
     /**
      * Sets the format that has to be used to send response.
