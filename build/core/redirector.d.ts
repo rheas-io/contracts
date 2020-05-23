@@ -10,8 +10,9 @@ export interface IRedirector {
      * Redirects the request back to the previous url in the session
      *
      * @param status
+     * @param fallback
      */
-    back(status?: number): IResponse;
+    back(status?: number, fallback?: string): IResponse;
     /**
      * Refreshes the request by reloading the request url
      *
