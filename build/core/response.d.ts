@@ -43,13 +43,6 @@ export interface IResponse extends ServerResponse {
      */
     prepareResponse(): IResponse;
     /**
-     * Creates a redirect response.
-     *
-     * @param to
-     * @param status
-     */
-    redirect(to: string, status?: number): IResponse;
-    /**
      * Returns the headers that are not needed in Not-Modified
      * responses.
      *

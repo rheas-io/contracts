@@ -5,6 +5,7 @@ import { IResponse } from "./response";
 import { IContainer } from "../container";
 import { IAttributeManager } from "./attribute";
 import { IRequestComponent } from "../routes/uri";
+import { IRedirector } from "./redirector";
 export interface IRequest extends IncomingMessage, IContainer, IAttributeManager {
     /**
      * Boots the request with services and containers.
@@ -13,6 +14,12 @@ export interface IRequest extends IncomingMessage, IContainer, IAttributeManager
      * @param response
      */
     boot(app: IApp, response: IResponse): IRequest;
+    /**
+     * Returns the request redirector service.
+     *
+     * @returns IRedirector
+     */
+    redirect(): IRedirector;
     /**
      * Sets the format that has to be used to send response.
      *
