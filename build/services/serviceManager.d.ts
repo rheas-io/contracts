@@ -3,14 +3,14 @@ import { KeyValue } from "../core/keyValue";
 import { IServiceProvider } from "./serviceProvider";
 export interface IServiceManager extends IServiceProvider {
     /**
-     * Adds a service to the manager. If a provider already exists
+     * Creates a new service on the manager. If a provider already exists
      * and is not registered yet, we will replace it or we will throw an
      * error.
      *
      * @param name
      * @param provider
      */
-    addService(name: string, provider: ClassOf<IServiceProvider>): IServiceManager;
+    newService(name: string, provider: ClassOf<IServiceProvider>): IServiceManager;
     /**
      * Sets the service providers this manager has to handle.
      *
