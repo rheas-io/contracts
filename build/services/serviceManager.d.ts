@@ -3,16 +3,30 @@ import { KeyValue } from "../core/keyValue";
 import { IServiceProvider } from "./serviceProvider";
 export interface IServiceManager extends IServiceProvider {
     /**
+     * Adds a service to the manager. If a provider already exists
+     * and is not registered yet, we will replace it or we will throw an
+     * error.
+     *
+     * @param name
+     * @param provider
+     */
+    addService(name: string, provider: ClassOf<IServiceProvider>): IServiceManager;
+    /**
      * Sets the service providers this manager has to handle.
      *
      * @param providers
      */
     setProviders(providers: KeyValue<ClassOf<IServiceProvider>>): void;
     /**
-     * Loads a deferred service if it's not alreayd registered.
+     * Registers services by name if it exists and not already loaded.
      *
-     * @param key
-     * @return true if service loaded on request
+     * @param name
      */
-    loadDeferredService(key: string): boolean;
+    registerServiceByName(name: string): boolean;
+    /**
+     * Returns true if the service already loaded/registered.
+     *
+     * @param name
+     */
+    isServiceLoaded(name: string): boolean;
 }
