@@ -4,7 +4,7 @@ export interface IHasher {
      *
      * @returns string
      */
-    createPepper(): string;
+    createPepper(): Promise<string>;
     /**
      * Creates a hash of the value
      *
