@@ -1,9 +1,9 @@
 import { IHasher } from "./hasher";
-import { IEncryptor } from "./encryptor";
+import { IEncrypter } from "./encrypter";
 import { IHashManager } from "./hashManager";
 
 export {
     IHasher,
-    IEncryptor,
+    IEncrypter,
     IHashManager
 }

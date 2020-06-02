@@ -1,15 +1,15 @@
 import { IHasher } from "./hasher";
 export interface IHashManager extends IHasher {
     /**
-     * Creates a pepper string for the hash algo.
-     *
-     * @returns string
-     */
-    createPepper(): Promise<string>;
-    /**
-     * Returns the hash driver to use.
+     * Returns the hash managers driver.
      *
      * @returns IHasher
      */
     getHasher(): IHasher;
+    /**
+     * Returns a new hasher instance of the algorithm.
+     *
+     * @param algo
+     */
+    getNewHasher(algo: string): IHasher;
 }
