@@ -1,8 +1,8 @@
-interface IBcryptConfig {
+export interface IBcryptConfig {
     rounds: number;
 }
 
-interface IArgonConfig {
+export interface IArgonConfig {
     memory: number,
     threads: number,
     time: number
