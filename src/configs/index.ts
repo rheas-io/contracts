@@ -1,4 +1,5 @@
 import { IDbConfig } from "./database";
 import { IHashConfig } from "./hashing";
+import { IAppConfig, AppCipher } from "./app";
 
-export { IDbConfig, IHashConfig }
+export { AppCipher, IAppConfig, IDbConfig, IHashConfig }
