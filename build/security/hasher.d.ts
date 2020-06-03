@@ -12,11 +12,4 @@ export interface IHasher {
      * @param hashedValue
      */
     compare(value: string, hashedValue: string): Promise<boolean> | boolean;
-    /**
-     * Performs time safe comparison of two hashes
-     *
-     * @param hashedValue
-     * @param preHashedValue
-     */
-    compareHashes(hashedValue: string, preHashedValue: string): Promise<boolean> | boolean;
 }
