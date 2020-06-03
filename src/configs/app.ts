@@ -1,9 +1,11 @@
+import { AnyObject } from "../core/keyValue";
+
 export enum AppCipher {
     "AES-128-CBC" = "AES-128-CBC",
     "AES-256-CBC" = "AES-256-CBC",
 }
 
-export interface IAppConfig {
+export interface IAppConfig extends AnyObject {
     key: string,
     cipher: AppCipher
 }
