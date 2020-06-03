@@ -1,13 +1,13 @@
 import { IHasher } from "./hasher";
 
-export interface IHashManager extends IHasher {
+export interface IHashManager {
 
     /**
-     * Returns the hash managers driver.
+     * Returns the password hash driver.
      * 
      * @returns IHasher
      */
-    getHasher(): IHasher;
+    getPasswordHasher(): IHasher;
 
     /**
      * Returns a new hasher instance of the algorithm.
