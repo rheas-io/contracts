@@ -1,12 +1,14 @@
 export interface IEncrypter {
     /**
-     * Encrypts the value
+     * Encrypts the given value and returns a hex response
+     * of Json encoded string containing iv, value and tag
      *
      * @param value
      */
-    encrypt(value: string | JSON): string;
+    encrypt(value: string | JSON): Promise<string>;
     /**
-     * Decrypts a value
+     * Decrypts the given encrypted value. Throws error if
+     * integrity fails, auth tag does not match.
      *
      * @param value
      */
