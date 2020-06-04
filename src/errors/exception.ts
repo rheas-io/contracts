@@ -24,6 +24,13 @@ export interface IException {
     status: number;
 
     /**
+     * Sets the given error as this exceptions error/stack.
+     * 
+     * @param err 
+     */
+    setException(err: Error): IException;
+
+    /**
      * Binds the exception status code and headers to the response.
      * 
      * @param response 
