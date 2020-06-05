@@ -2,11 +2,15 @@ import { IRequest } from "../core/request";
 import { StringObject } from "../core/keyValue";
 export interface IUrlGenerator {
     /**
-     * Creates an absolute url to the given path.
+     * Creates an absolute url to the given path. Params are used to
+     * replace params or append query string. By default all paths are
+     * created as secure if no value is given.
      *
      * @param path
+     * @param params
+     * @param secure
      */
-    to(path: string): string;
+    to(path: string, params: StringObject, secure: boolean | null): string;
     /**
      * Returns the current requets url
      *
