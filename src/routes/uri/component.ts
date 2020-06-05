@@ -1,11 +1,11 @@
 export interface IUriComponent {
+
     /**
-     * Single route uri segment obtained when the route is split
-     * by forward slash (/)
+     * Returns the path segment as it is.
      * 
-     * @var string
+     * @returns string
      */
-    component: string;
+    getSegment(): string;
 
     /**
      * Compares this uriComponent with another one. Returns true
