@@ -13,9 +13,9 @@ export interface IRoute {
 
     routeDomain(): string;
 
-    routeSecure(): boolean;
-
     routeEndpoints(): IRoute[];
+
+    isHttpRoute(): boolean;
 
     methods(methods: string | string[]): IRoute;
 

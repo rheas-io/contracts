@@ -6,8 +6,8 @@ export interface IRoute {
     middlewaresToResolve(): string[];
     routePath(): string;
     routeDomain(): string;
-    routeSecure(): boolean;
     routeEndpoints(): IRoute[];
+    isHttpRoute(): boolean;
     methods(methods: string | string[]): IRoute;
     action(action: string | IRequestHandler): IRoute;
     name(name: string): IRoute;
