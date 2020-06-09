@@ -15,7 +15,7 @@ export interface IRoute {
     domain(domain: string): IRoute;
     middleware(middlewares: string | string[]): IRoute;
     withoutMiddleware(middlewares: string | string[]): IRoute;
-    secure(): IRoute;
+    http(httpRoute: boolean): IRoute;
     setParent(route: IRoute): void;
     getMethods(): string[];
     getName(): string;

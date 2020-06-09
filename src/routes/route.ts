@@ -31,7 +31,7 @@ export interface IRoute {
 
     withoutMiddleware(middlewares: string | string[]): IRoute;
 
-    secure(): IRoute;
+    http(httpRoute:boolean): IRoute;
 
     setParent(route: IRoute): void;
 
