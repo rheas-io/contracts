@@ -6,9 +6,10 @@ export interface IRedirector {
     /**
      * Redirects the request to home page
      * 
+     * @param params
      * @param status 
      */
-    home(status?: number): IResponse;
+    home(params: AnyObject, status?: number): IResponse;
 
     /**
      * Redirects the request back to the previous url in the session
