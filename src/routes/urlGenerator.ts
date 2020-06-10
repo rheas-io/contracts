@@ -1,3 +1,4 @@
+import { IRoute } from "./route";
 import { IRequest } from "../core/request";
 import { AnyObject } from "../core/keyValue";
 
@@ -25,6 +26,15 @@ export interface IUrlGenerator {
      * @param params 
      */
     toRoute(name: string, params: AnyObject): string;
+
+    /**
+     * Returns a url of the given route.
+     * 
+     * @param route 
+     * @param params 
+     * @param secure 
+     */
+    routeUrl(route: IRoute, params: AnyObject, secure: boolean): string;
 
     /**
      * Creates an absolute url to the given path. Params are used to
