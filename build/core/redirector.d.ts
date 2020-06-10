@@ -1,4 +1,5 @@
 import { IResponse } from "./response";
+import { AnyObject } from "./keyValue";
 export interface IRedirector {
     /**
      * Redirects the request to home page
@@ -23,14 +24,16 @@ export interface IRedirector {
      * Redirects the request to the given path/url
      *
      * @param path
+     * @param params
      * @param status
      */
-    to(path: string, status?: number): IResponse;
+    to(path: string, params: AnyObject, status?: number): IResponse;
     /**
      * Redirects the request to a named route
      *
      * @param name
+     * @param params
      * @param status
      */
-    toRoute(name: string, status?: number): IResponse;
+    toRoute(name: string, params: AnyObject, status?: number): IResponse;
 }
