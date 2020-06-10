@@ -12,8 +12,9 @@ export interface IUrlGenerator {
      * Returns the previous url.
      *
      * @param req
+     * @param fallback
      */
-    previous(req: IRequest, fallback: string): string;
+    previous(req: IRequest, fallback?: string): string;
     /**
      * Generates a full route url. Params are replaced with
      * the given argument list
@@ -21,7 +22,7 @@ export interface IUrlGenerator {
      * @param name
      * @param params
      */
-    toRoute(name: string, params: AnyObject): string;
+    toRoute(name: string, params?: AnyObject): string;
     /**
      * Returns a url of the given route.
      *
@@ -29,7 +30,7 @@ export interface IUrlGenerator {
      * @param params
      * @param secure
      */
-    routeUrl(route: IRoute, params: AnyObject, secure: boolean): string;
+    routeUrl(route: IRoute, params?: AnyObject, secure?: boolean): string;
     /**
      * Creates an absolute url to the given path. Params are used to
      * replace params or append query string. By default all paths are
@@ -39,5 +40,5 @@ export interface IUrlGenerator {
      * @param params
      * @param secure
      */
-    to(path: string, params: AnyObject, secure?: boolean): string;
+    to(path: string, params?: AnyObject, secure?: boolean): string;
 }
