@@ -22,6 +22,7 @@ export interface IRoute {
     getPath(): string;
     getAction(): string | IRequestHandler;
     getParent(): IRoute | null;
+    getChildRoutes(): IRoute[];
     getUriComponents(): IUriComponent[];
     getExcludedMiddlewares(): string[];
     isEndpoint(): boolean;

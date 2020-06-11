@@ -45,6 +45,8 @@ export interface IRoute {
 
     getParent(): IRoute | null;
 
+    getChildRoutes(): IRoute[];
+
     getUriComponents(): IUriComponent[];
 
     getExcludedMiddlewares(): string[];
