@@ -4,6 +4,10 @@ export interface IProviderConfig {
     callbackUrl?: string
 }
 
+export interface IFacebookProvider extends IProviderConfig {
+    version?: string;
+}
+
 export interface IAuthConfig {
 
 }
