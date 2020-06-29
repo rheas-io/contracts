@@ -1,4 +1,5 @@
 import { ServerResponse } from "http";
+import { AnyObject } from "./keyValue";
 
 export interface IResponse extends ServerResponse {
 
@@ -16,6 +17,13 @@ export interface IResponse extends ServerResponse {
      * @param content 
      */
     set(content: any): IResponse;
+
+    /**
+     * Sets a JSON content
+     * 
+     * @param content 
+     */
+    json(content: AnyObject): IResponse;
 
     /**
      * Sets the response content/body that has to be send.
