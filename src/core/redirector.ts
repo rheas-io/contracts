@@ -33,7 +33,7 @@ export interface IRedirector {
      * @param params
      * @param status 
      */
-    to(path: string, params: AnyObject, status?: number): IResponse;
+    to(path: string, params?: AnyObject, status?: number): IResponse;
 
     /**
      * Redirects the request to a named route
@@ -42,5 +42,5 @@ export interface IRedirector {
      * @param params
      * @param status 
      */
-    toRoute(name: string, params: AnyObject, status?: number): IResponse;
+    toRoute(name: string, params?: AnyObject, status?: number): IResponse;
 }
