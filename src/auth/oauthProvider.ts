@@ -13,6 +13,16 @@ export interface IOauthProvider {
     onAuthorizeRequested(req: IRequest, res: IResponse): Promise<IResponse>;
 
     /**
+     * Authorization response controller. Provider redirects the auth request
+     * to this controller function. This function has to read the response from
+     * the provider and process accordingly.
+     * 
+     * @param req 
+     * @param res 
+     */
+    onAuthorizeResponded(req: IRequest, res: IResponse): Promise<IResponse>;
+
+    /**
      * Returns the authorization request url including the query part
      * containing state, scope, client_id etc
      * 
