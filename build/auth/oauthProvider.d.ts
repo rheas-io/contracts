@@ -26,6 +26,12 @@ export interface IOauthProvider {
      */
     getAuthorizationRequestUrl(): string;
     /**
+    * Adds a new authorization scope on the provider.
+    *
+    * @param scope
+    */
+    addScope(scope: string): IOauthProvider;
+    /**
      * Returns the client_id query string to be used. Keys could be
      * different for different providers.
      *
@@ -76,4 +82,10 @@ export interface IOauthProvider {
      * @returns string
      */
     getCallbackUrl(): string;
+    /**
+     * Returns the user auth scope/permissions as an array
+     *
+     * @returns array
+     */
+    getScope(): string[];
 }
