@@ -38,22 +38,6 @@ export interface IOauthProvider {
     addScope(scope: string): IOauthProvider;
 
     /**
-     * Returns the client_id query string to be used. Keys could be 
-     * different for different providers.
-     * 
-     * @returns string
-     */
-    getClientIdKey(): string;
-
-    /**
-     * Returns the redirect link query string. Keys could be different 
-     * for different providers.
-     * 
-     * @returns string
-     */
-    getRedirectKey(): string;
-
-    /**
      * Returns the provider client id
      * 
      * @returns string
