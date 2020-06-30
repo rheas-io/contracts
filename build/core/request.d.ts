@@ -3,9 +3,10 @@ import { IApp } from "./app";
 import { IncomingMessage } from "http";
 import { IResponse } from "./response";
 import { IContainer } from "../container";
+import { IRedirector } from "./redirector";
 import { IAttributeManager } from "./attribute";
 import { IRequestComponent } from "../routes/uri";
-import { IRedirector } from "./redirector";
+import { AnyObject } from "./keyValue";
 export interface IRequest extends IncomingMessage, IContainer, IAttributeManager {
     /**
      * Boots the request with services and containers.
@@ -14,6 +15,18 @@ export interface IRequest extends IncomingMessage, IContainer, IAttributeManager
      * @param response
      */
     boot(app: IApp, response: IResponse): IRequest;
+    /**
+     * Returns the value of request input/data/file
+     *
+     * @param key
+     */
+    input(key?: string): any;
+    /**
+     * Returns all the request inputs as key value object
+     *
+     * @returns object
+     */
+    all(): AnyObject;
     /**
      * Returns the request redirector service.
      *
