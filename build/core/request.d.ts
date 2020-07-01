@@ -40,6 +40,12 @@ export interface IRequest extends IncomingMessage, IContainer, IAttributeManager
      */
     setFormat(format: string): IRequest;
     /**
+     * Adds the parameter elements to the request inputs.
+     *
+     * @param input
+     */
+    merge(input: AnyObject): IRequest;
+    /**
      * Returns the params of this request as an array in the
      * same order.
      *
