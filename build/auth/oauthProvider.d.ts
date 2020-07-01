@@ -1,6 +1,6 @@
 import { IRequest } from "../core/request";
 import { IResponse } from "../core/response";
-import { StringObject } from "../core/keyValue";
+import { StringObject, AnyObject } from "../core/keyValue";
 export interface IOauthProvider {
     /**
      * Authorization request controller. Redirects the requests to the
@@ -11,14 +11,14 @@ export interface IOauthProvider {
      */
     onAuthorizeRequested(req: IRequest, res: IResponse): Promise<IResponse>;
     /**
-     * Authorization response controller. Provider redirects the auth request
-     * to this controller function. This function has to read the response from
-     * the provider and process accordingly.
+     * Authorization response controller. Oauth provider redirects the auth request
+     * to this controller function. This function has to read the response code and
+     * return an accessToken from the provider.
      *
      * @param req
      * @param res
      */
-    onAuthorizeResponded(req: IRequest, res: IResponse): Promise<IResponse>;
+    onAuthorizeResponded(req: IRequest, res: IResponse): Promise<AnyObject>;
     /**
      * Returns the authorization request url including the query part
      * containing state, scope, client_id etc
