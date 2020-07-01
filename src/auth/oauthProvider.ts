@@ -24,6 +24,14 @@ export interface IOauthProvider {
     onAuthorizeResponded(req: IRequest, res: IResponse): Promise<AnyObject>;
 
     /**
+     * Sends the error response, if authorization was failed.
+     * 
+     * @param req 
+     * @param res 
+     */
+    sendErrorResponse(req: IRequest, res: IResponse): IResponse;
+
+    /**
      * Returns the authorization request url including the query part
      * containing state, scope, client_id etc
      * 
