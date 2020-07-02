@@ -38,7 +38,7 @@ export interface IOauthProvider {
      * 
      * @param token 
      */
-    getProfile(token: AnyObject): AnyObject;
+    getProfile(token: AnyObject): Promise<AnyObject>;
 
     /**
      * Returns the authorization request url including the query part
