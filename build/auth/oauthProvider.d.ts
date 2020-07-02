@@ -24,8 +24,16 @@ export interface IOauthProvider {
      *
      * @param req
      * @param res
+     * @param error
      */
-    sendErrorResponse(req: IRequest, res: IResponse): IResponse;
+    sendErrorResponse(req: IRequest, res: IResponse, error?: AnyObject): IResponse;
+    /**
+     * Gets the user profile details from the povider. Accesstoken has to
+     * be submitted to retreive the profile details.
+     *
+     * @param token
+     */
+    getProfile(token: AnyObject): AnyObject;
     /**
      * Returns the authorization request url including the query part
      * containing state, scope, client_id etc
