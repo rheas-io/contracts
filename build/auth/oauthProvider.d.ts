@@ -31,9 +31,9 @@ export interface IOauthProvider {
      * Gets the user profile details from the povider. Accesstoken has to
      * be submitted to retreive the profile details.
      *
-     * @param token
+     * @param tokenResponse
      */
-    getProfile(token: AnyObject): Promise<AnyObject>;
+    getProfile(tokenResponse: AnyObject): Promise<AnyObject>;
     /**
      * Returns the authorization request url including the query part
      * containing state, scope, client_id etc
