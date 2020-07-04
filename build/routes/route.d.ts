@@ -13,8 +13,8 @@ export interface IRoute {
     name(name: string): IRoute;
     prefix(name: string): IRoute;
     domain(domain: string): IRoute;
-    middleware(middlewares: string | string[]): IRoute;
-    withoutMiddleware(middlewares: string | string[]): IRoute;
+    middleware(...middlewares: string[]): IRoute;
+    withoutMiddleware(...middlewares: string[]): IRoute;
     http(httpRoute?: boolean): IRoute;
     setParent(route: IRoute): void;
     getMethods(): string[];
