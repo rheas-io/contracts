@@ -1,6 +1,6 @@
 import { IRequest } from "../core/request";
 import { IResponse } from "../core/response";
-import { StringObject, AnyObject } from "../core/keyValue";
+import { AnyObject } from "../core/keyValue";
 export interface IOauthProvider {
     /**
      * Authorization request controller. Redirects the requests to the
@@ -41,13 +41,6 @@ export interface IOauthProvider {
      * @returns string
      */
     getAuthorizationRequestUrl(): string;
-    /**
-     * Returns the auth query params. Override this method to add or
-     * change the authorization queries.
-     *
-     * @returns object
-     */
-    getAuthorizationParams(): StringObject;
     /**
     * Adds a new authorization scope on the provider.
     *

@@ -49,14 +49,6 @@ export interface IOauthProvider {
     getAuthorizationRequestUrl(): string;
 
     /**
-     * Returns the auth query params. Override this method to add or
-     * change the authorization queries.
-     * 
-     * @returns object
-     */
-    getAuthorizationParams(): StringObject;
-
-    /**
     * Adds a new authorization scope on the provider.
     * 
     * @param scope 
