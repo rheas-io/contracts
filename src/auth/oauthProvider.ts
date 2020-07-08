@@ -1,6 +1,6 @@
 import { IRequest } from "../core/request";
 import { IResponse } from "../core/response";
-import { StringObject, AnyObject } from "../core/keyValue";
+import { AnyObject } from "../core/keyValue";
 
 export interface IOauthProvider {
 
