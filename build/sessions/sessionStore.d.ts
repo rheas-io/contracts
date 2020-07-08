@@ -1,6 +1,12 @@
 import { ISession } from "./session";
 export interface ISessionStore {
     /**
+     * Saves the session on the store.
+     *
+     * @param session
+     */
+    save(session: ISession): boolean;
+    /**
      * Reads the session JSON data from the store. If the data is
      * encrypted, it will be decrypted. Data will be stored in the
      * base64 encoded format of { session:value, encryption:false, last_access:time }
@@ -18,12 +24,6 @@ export interface ISessionStore {
      * @return
      */
     remove(id: string): boolean;
-    /**
-     * Saves the session on the store.
-     *
-     * @param session
-     */
-    save(session: ISession): boolean;
     /**
      * Clears expired sessions in the store.
      *
