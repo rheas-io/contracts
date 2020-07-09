@@ -13,17 +13,19 @@ export interface ISession {
      */
     touch(): ISession;
     /**
-     * Gets the session id.
+     * Gets the session id if parameter is empty. Or, sets the parameter
+     * as session id.
      *
      * @returns
      */
-    id(): string;
+    id(id: string): string;
     /**
-     * Gets the csrf token of the session.
+     * Gets the csrf token of the session if parameter is empty. Or,
+     * sets the parameter as session token
      *
      * @returns
      */
-    csrf(): string;
+    csrf(token: string): string;
     /**
      * Gets a value stored in the session.
      *
