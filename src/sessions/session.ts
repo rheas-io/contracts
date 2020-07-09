@@ -7,7 +7,7 @@ export interface ISession {
      * 
      * @returns 
      */
-    lastAccessed(): string;
+    lastAccessed(): number;
 
     /**
      * Updates the last accessed time of the session.
