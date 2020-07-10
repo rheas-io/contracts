@@ -20,6 +20,14 @@ export interface IFileManager {
     readFile(filePath: string, encoding?: string): Promise<string>;
 
     /**
+    * Read contents of a file synchronously
+    * 
+    * @param filePath 
+    * @param encoding 
+    */
+    readFileSync(filePath: string, encoding?: string): string;
+
+    /**
      * Returns the file stats of the given path.
      * 
      * @param path 
