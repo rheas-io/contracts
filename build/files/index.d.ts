@@ -1,2 +1,2 @@
-import { IFiles } from "./files";
-export { IFiles };
+import { IFileManager } from "./fileManager";
+export { IFileManager };

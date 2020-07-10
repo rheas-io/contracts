@@ -1,5 +1,5 @@
-import { IFiles } from "./files";
+import { IFileManager } from "./fileManager";
 
 export {
-    IFiles
+    IFileManager
 }
