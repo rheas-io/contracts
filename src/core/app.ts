@@ -7,7 +7,5 @@ export interface IApp extends IContainer, IServer {
 
     config(key: string, defaultValue?: any): any;
 
-    getRootPath(): string;
-
-    getAssetPath(): string;
+    path(folder: string): string;
 }
