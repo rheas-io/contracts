@@ -1,7 +1,8 @@
 import { IServer } from "./server";
 import { IManager } from "./manager";
-import { IContainer } from "../container/container";
 import { IServiceManager } from "../services";
+import { IContainer } from "../container/container";
+import { IFileManager } from "../files/fileManager";
 
 export interface IApp extends IContainer, IServer {
 
@@ -10,6 +11,21 @@ export interface IApp extends IContainer, IServer {
      * creates a database connection and listen for requests.
      */
     startApp(): void;
+
+    /**
+     * Returns the application environment variables handler.
+     * 
+     * @returns
+     */
+    env(): IManager;
+
+    /**
+     * Returns the application file system manager. Responsible
+     * for creating, deleting, reading, updating files.
+     * 
+     * @returns
+     */
+    files(): IFileManager;
 
     /**
      * Returns the application config manager.
