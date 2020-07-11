@@ -1,4 +1,5 @@
 import { ISession } from "./session";
+import { AnyObject } from "../core/keyValue";
 export interface ISessionStore {
     /**
      * Saves the session on the store.
@@ -35,13 +36,13 @@ export interface ISessionStore {
      *
      * @param session
      */
-    encrypt(session: ISession): string;
+    encrypt(session: ISession): Promise<string>;
     /**
-     * Decrypts the given session data into JSON.
+     * Decrypts the given session data into object.
      *
      * @param data
      */
-    decrypt(data: string): JSON;
+    decrypt(data: string): Promise<AnyObject>;
     /**
      * Set the session encryption option.
      *
