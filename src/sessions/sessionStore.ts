@@ -49,7 +49,7 @@ export interface ISessionStore {
      * 
      * @param data 
      */
-    decrypt(data: string): Promise<AnyObject>;
+    decrypt(data: string): AnyObject;
 
     /**
      * Set the session encryption option.
