@@ -1,5 +1,4 @@
 import { IncomingMessage } from "http";
-import { IResponse } from "./response";
 import { AnyObject } from "./keyValue";
 import { IContainer } from "../container";
 import { IRedirector } from "./redirector";
