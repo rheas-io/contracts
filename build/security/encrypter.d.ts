@@ -1,3 +1,4 @@
+import { AnyObject } from "../core/keyValue";
 export interface IEncrypter {
     /**
      * Encrypts the given value and returns a hex response
@@ -5,12 +6,12 @@ export interface IEncrypter {
      *
      * @param value
      */
-    encrypt(value: string | JSON): Promise<string>;
+    encrypt(value: string | AnyObject): Promise<string>;
     /**
      * Decrypts the given encrypted value. Throws error if
      * integrity fails, auth tag does not match.
      *
      * @param value
      */
-    decrypt(value: string): string | JSON;
+    decrypt(value: string): string | AnyObject;
 }
