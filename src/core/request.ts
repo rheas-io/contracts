@@ -11,9 +11,9 @@ export interface IRequest extends IncomingMessage, IContainer, IAttributeManager
     /**
      * Boots the request with services and containers.
      * 
-     * @param response
+     * @returns IRequest
      */
-    boot(response: IResponse): IRequest;
+    boot(): IRequest;
 
     /**
      * Returns the value of request input/data/file

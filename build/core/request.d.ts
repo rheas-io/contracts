@@ -1,6 +1,5 @@
 /// <reference types="node" />
 import { IncomingMessage } from "http";
-import { IResponse } from "./response";
 import { AnyObject } from "./keyValue";
 import { IContainer } from "../container";
 import { IRedirector } from "./redirector";
@@ -10,9 +9,9 @@ export interface IRequest extends IncomingMessage, IContainer, IAttributeManager
     /**
      * Boots the request with services and containers.
      *
-     * @param response
+     * @returns IRequest
      */
-    boot(response: IResponse): IRequest;
+    boot(): IRequest;
     /**
      * Returns the value of request input/data/file
      *
