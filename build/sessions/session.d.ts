@@ -18,14 +18,14 @@ export interface ISession {
      *
      * @returns
      */
-    id(id: string): string;
+    id(id?: string): string;
     /**
      * Gets the csrf token of the session if parameter is empty. Or,
      * sets the parameter as session token
      *
      * @returns
      */
-    csrf(token: string): string;
+    csrf(token?: string): string;
     /**
      * Gets a value stored in the session.
      *
