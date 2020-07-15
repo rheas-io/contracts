@@ -1,3 +1,4 @@
 import { ISession } from "./session";
+import { ISessionState } from "./sessionState";
 import { ISessionStore } from "./sessionStore";
-export { ISession, ISessionStore };
+export { ISession, ISessionState, ISessionStore };
