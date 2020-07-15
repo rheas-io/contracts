@@ -8,7 +8,7 @@ export interface ISessionStore {
      * 
      * @param session 
      */
-    save(session: ISession): boolean;
+    save(session: ISession): Promise<boolean>;
 
     /**
      * Reads the session JSON data from the store. If the data is
@@ -19,7 +19,7 @@ export interface ISessionStore {
      * 
      * @returns 
      */
-    read(id: string): ISession | null;
+    read(id: string): Promise<ISession | null>;
 
     /**
      * Removes the session from the store
