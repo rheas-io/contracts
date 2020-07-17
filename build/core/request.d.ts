@@ -56,11 +56,49 @@ export interface IRequest extends IncomingMessage, IContainer, IAttributeManager
      */
     isSecure(): boolean;
     /**
+     * Returns true if the request is an AJAX request.
+     *
+     * @returns
+     */
+    ajax(): boolean;
+    /**
+     * Returns true if the request is a PJAX request.
+     *
+     * @returns
+     */
+    pjax(): boolean;
+    /**
+     * Returns true if the request accepts the given type.
+     *
+     * @param type
+     */
+    accepts(type: string): boolean;
+    /**
      * Returns true if the request needs Json response.
      *
      * @return boolean
      */
     acceptsJson(): boolean;
+    /**
+     * Returns true if the request is specifically asking
+     * for json response.
+     *
+     * @returns
+     */
+    wantsJson(): boolean;
+    /**
+     * Returns true if the request accepts any content type
+     *
+     * @returns
+     */
+    acceptsAnyType(): boolean;
+    /**
+     * Returns the acceptable content types in the quality order.
+     * Most preferred are returned first.
+     *
+     * @returns
+     */
+    acceptableContentTypes(): string[];
     /**
      * Returns true if the request is json type.
      *
