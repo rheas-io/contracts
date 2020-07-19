@@ -1,6 +1,7 @@
 /// <reference types="node" />
 import { ServerResponse } from "http";
 import { AnyObject } from "./keyValue";
+import { ICacheManager } from "./cacheManager";
 export interface IResponse extends ServerResponse {
     /**
      * Sends the response and ends the stream. This completes
@@ -35,6 +36,12 @@ export interface IResponse extends ServerResponse {
      * @returns IResponse
      */
     setEmptyContent(): IResponse;
+    /**
+     * Returns the cache header manager of this response.
+     *
+     * @returns
+     */
+    cache(): ICacheManager;
     /**
      * Sets status as 304 and removes content and headers that are not
      * needed in a non-modified response.
