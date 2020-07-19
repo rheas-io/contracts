@@ -1,6 +1,14 @@
 export interface ICacheManager {
 
     /**
+     * Returns true if there is any Last-Modified or ETag header.
+     * These are the headers that facilitate cache validations.
+     * 
+     * @returns
+     */
+    isValidateable(): boolean;
+
+    /**
      * Returns true if the response is considered "fresh".
      * 
      * A response is considered fresh if its lifetime is less than the 
