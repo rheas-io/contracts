@@ -40,7 +40,7 @@ export interface IApp extends IContainer, IServer {
      * @param key 
      * @param value 
      */
-    exceptions(key?: string, value?: string[]): string[];
+    exceptions(key: string, value?: string[]): string[];
 
     /**
      * Returns path to the folder. If no arg is given, root path
