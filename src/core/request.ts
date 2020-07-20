@@ -1,11 +1,11 @@
 import { IncomingMessage } from "http";
-import { AnyObject } from "./keyValue";
 import { IContainer } from "../container";
 import { IRedirector } from "./redirector";
-import { IAttributeManager } from "./attribute";
 import { IRequestComponent } from "../routes/uri";
+import { IRequestContent } from "./requestContent";
+import { IRequestInput } from "./requestInput";
 
-export interface IRequest extends IncomingMessage, IContainer, IAttributeManager {
+export interface IRequest extends IncomingMessage, IContainer {
 
     /**
      * Boots the request with services and containers.
@@ -15,20 +15,6 @@ export interface IRequest extends IncomingMessage, IContainer, IAttributeManager
     boot(): IRequest;
 
     /**
-     * Returns the value of request input/data/file
-     *  
-     * @param key 
-     */
-    input(key?: string): any;
-
-    /**
-     * Returns all the request inputs as key value object
-     * 
-     * @returns object
-     */
-    all(): AnyObject;
-
-    /**
      * Returns the request redirector service.
      * 
      * @returns IRedirector
@@ -36,18 +22,20 @@ export interface IRequest extends IncomingMessage, IContainer, IAttributeManager
     redirect(): IRedirector;
 
     /**
-     * Sets the format that has to be used to send response.
+     * Returns the request content manager. Responsible for anything
+     * related to content-types, formats, mime-types etc.
      * 
-     * @param format 
+     * @returns
      */
-    setFormat(format: string): IRequest;
+    contents(): IRequestContent;
 
     /**
-     * Adds the parameter elements to the request inputs.
+     * Returns the request inputs manager. Manages all the input fields
+     * of a request.
      * 
-     * @param input 
+     * @returns
      */
-    merge(input: AnyObject): IRequest;
+    inputs(): IRequestInput;
 
     /**
      * Returns the params of this request as an array in the
@@ -63,64 +51,6 @@ export interface IRequest extends IncomingMessage, IContainer, IAttributeManager
      * @return boolean
      */
     isSecure(): boolean;
-
-    /**
-     * Returns true if the request is an AJAX request.
-     * 
-     * @returns
-     */
-    ajax(): boolean;
-
-    /**
-     * Returns true if the request is a PJAX request.
-     * 
-     * @returns
-     */
-    pjax(): boolean;
-
-    /**
-     * Returns true if the request accepts the given type.
-     * 
-     * @param type 
-     */
-    accepts(type:string):boolean;
-
-    /**
-     * Returns true if the request needs Json response.
-     * 
-     * @return boolean
-     */
-    acceptsJson(): boolean;
-
-    /**
-     * Returns true if the request is specifically asking
-     * for json response.
-     * 
-     * @returns
-     */
-    wantsJson(): boolean;
-
-    /**
-     * Returns true if the request accepts any content type
-     * 
-     * @returns
-     */
-    acceptsAnyType(): boolean;
-
-    /**
-     * Returns the acceptable content types in the quality order.
-     * Most preferred are returned first.
-     * 
-     * @returns
-     */
-    acceptableContentTypes(): string[];
-
-    /**
-     * Returns true if the request is json type.
-     * 
-     * @return boolean
-     */
-    isJson(): boolean;
 
     /**
      * Gets the request schema https/http
@@ -180,20 +110,4 @@ export interface IRequest extends IncomingMessage, IContainer, IAttributeManager
      * @return string
      */
     getRealMethod(): string;
-
-    /**
-     * Gets the request format set by the application.
-     * 
-     * @param defaulValue
-     * @returns string
-     */
-    getFormat(defaulValue?: string): string;
-
-    /**
-     * Returns the mimetype of the format. null if no mime found.
-     * 
-     * @param format 
-     * @returns string
-     */
-    getMimeType(format: string): string | null;
 }
