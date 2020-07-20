@@ -1,18 +1,18 @@
 /// <reference types="node" />
+import { AnyObject } from "./keyValue";
 import { IncomingMessage } from "http";
 import { IContainer } from "../container";
 import { IRedirector } from "./redirector";
+import { IRequestInput } from "./requestInput";
 import { IRequestComponent } from "../routes/uri";
 import { IRequestContent } from "./requestContent";
-import { IRequestInput } from "./requestInput";
-import { AnyObject } from "./keyValue";
 export interface IRequest extends IncomingMessage, IContainer {
     /**
      * Boots the request with services and containers.
      *
      * @returns IRequest
      */
-    boot(): IRequest;
+    boot(): Promise<IRequest>;
     /**
      * Returns the request redirector service.
      *
