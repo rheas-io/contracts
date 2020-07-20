@@ -1,11 +1,6 @@
+import { IManager } from "./manager";
 import { AnyObject } from "./keyValue";
-export interface IRequestInput {
-    /**
-     * Returns the value of request input/data/file
-     *
-     * @param key
-     */
-    input(key?: string): any;
+export interface IRequestInput extends IManager {
     /**
      * Returns all the request inputs as key value object
      *
