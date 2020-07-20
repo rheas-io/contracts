@@ -4,6 +4,7 @@ import { IRedirector } from "./redirector";
 import { IRequestComponent } from "../routes/uri";
 import { IRequestContent } from "./requestContent";
 import { IRequestInput } from "./requestInput";
+import { AnyObject } from "./keyValue";
 
 export interface IRequest extends IncomingMessage, IContainer {
 
@@ -36,6 +37,27 @@ export interface IRequest extends IncomingMessage, IContainer {
      * @returns
      */
     inputs(): IRequestInput;
+
+    /**
+     * Returns the request body contents as an object.
+     * 
+     * @returns 
+     */
+    body(): AnyObject;
+
+    /**
+     * Returns the uploaded files with form_name as the key.
+     * 
+     * @var AnyObject
+     */
+    files(): AnyObject;
+
+    /**
+     * Returns the query objects.
+     * 
+     * @returns
+     */
+    query(): AnyObject;
 
     /**
      * Returns the params of this request as an array in the
