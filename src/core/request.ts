@@ -1,3 +1,4 @@
+import { IHeaders } from "./headers";
 import { AnyObject } from "./keyValue";
 import { IncomingMessage } from "http";
 import { IContainer } from "../container";
@@ -21,6 +22,13 @@ export interface IRequest extends IncomingMessage, IContainer {
      * @returns IRedirector
      */
     redirect(): IRedirector;
+
+    /**
+     * Returns the request header manager.
+     * 
+     * @returns
+     */
+    reqHeaders(): IHeaders;
 
     /**
      * Returns the request content manager. Responsible for anything
