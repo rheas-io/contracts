@@ -1,7 +1,6 @@
 import { CipherGCMTypes } from "crypto";
-import { AnyObject, KeyValue } from "../core/keyValue";
-import { ClassOf } from "../core/class";
-import { IServiceProvider } from "../services";
+import { AnyObject } from "../core/keyValue";
+import { IAppProviders } from "./appProviders";
 
 export interface IAppConfig extends AnyObject {
     /**
@@ -70,5 +69,5 @@ export interface IAppConfig extends AnyObject {
      * Don't add any services that works on individual requests in here. For those,
      * use the providers on request config.
      */
-    providers: KeyValue<ClassOf<IServiceProvider>>
+    providers: IAppProviders
 }
