@@ -37,6 +37,9 @@ export interface IApp extends IContainer, IServer {
      * exceptions will have to be made to services/operations.These 
      * are set/get using this function.
      * 
+     * For example, csrf should be exempt from certain routes. These 
+     * exception route list has to be set on the app instance.
+     * 
      * @param key 
      * @param value 
      */
