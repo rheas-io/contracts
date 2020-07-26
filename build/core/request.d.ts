@@ -1,5 +1,7 @@
 /// <reference types="node" />
+import { IApp } from "./app";
 import { IHeaders } from "./headers";
+import { IResponse } from "./response";
 import { AnyObject } from "./keyValue";
 import { IncomingMessage } from "http";
 import { IContainer } from "../container";
@@ -13,7 +15,7 @@ export interface IRequest extends IncomingMessage, IContainer {
      *
      * @returns IRequest
      */
-    boot(): Promise<IRequest>;
+    boot(app: IApp, res: IResponse): Promise<IRequest>;
     /**
      * Returns the request redirector service.
      *
