@@ -9,12 +9,6 @@ export interface IApp extends IContainer, IServer {
      */
     startApp(): void;
     /**
-     * Returns the application environment variables handler.
-     *
-     * @returns
-     */
-    env(): IManager;
-    /**
      * Returns the application config manager.
      *
      * @returns
