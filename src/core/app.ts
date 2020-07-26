@@ -1,4 +1,6 @@
 import { IServer } from "./server";
+import { IManager } from "./manager";
+import { IServiceManager } from "../services";
 import { IContainer } from "../container/container";
 
 export interface IApp extends IContainer, IServer {
@@ -10,12 +12,30 @@ export interface IApp extends IContainer, IServer {
     startApp(): void;
 
     /**
-     * Exception keys setter and getter. Throughout the app certain 
-     * exceptions will have to be made to services/operations. These 
-     * are set/get using this function. 
+     * Returns the application environment variables handler.
      * 
-     * For example, csrf should be exempt from certain routes. These 
-     * exception route list has to be set on the app instance.
+     * @returns
+     */
+    env(): IManager;
+
+    /**
+     * Returns the application config manager.
+     * 
+     * @returns
+     */
+    configs(): IManager;
+
+    /**
+     * Returns the application service manager.
+     * 
+     * @returns
+     */
+    services(): IServiceManager;
+
+    /**
+     * Exception keys setter and getter. Throughout the app certain 
+     * exceptions will have to be made to services/operations.These 
+     * are set/get using this function.
      * 
      * @param key 
      * @param value 
