@@ -6,5 +6,7 @@ export type IAppProviders = KeyValue<ClassOf<IServiceProvider>> & {
     // Add the keys, that should never be added in the
     // config files. These providers are already registered
     // in the container itself.
-    config?: never,
+    env?: never,
+    configs?: never,
+    services?: never
 };
