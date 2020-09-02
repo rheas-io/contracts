@@ -1,46 +1,45 @@
-import { IResponse } from "./response";
-import { AnyObject } from "./keyValue";
+import { IResponse } from './response';
+import { AnyObject } from './keyValue';
 
 export interface IRedirector {
-
     /**
      * Redirects the request to home page
-     * 
+     *
      * @param params
-     * @param status 
+     * @param status
      */
     home(params: AnyObject, status?: number): IResponse;
 
     /**
      * Redirects the request back to the previous url in the session
-     * 
-     * @param status 
+     *
+     * @param status
      * @param fallback
      */
     back(status?: number, fallback?: string): IResponse;
 
     /**
      * Refreshes the request by reloading the request url
-     * 
-     * @param status 
+     *
+     * @param status
      */
     refresh(status?: number): IResponse;
 
     /**
      * Redirects the request to the given path/url
-     * 
-     * @param path 
+     *
+     * @param path
      * @param params
-     * @param status 
+     * @param status
      */
     to(path: string, params?: AnyObject, status?: number): IResponse;
 
     /**
      * Redirects the request to a named route
-     * 
-     * @param name 
+     *
+     * @param name
      * @param params
-     * @param status 
+     * @param status
      */
     toRoute(name: string, params?: AnyObject, status?: number): IResponse;
 }

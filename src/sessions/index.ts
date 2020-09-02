@@ -1,9 +1,5 @@
-import { ISession } from "./session";
-import { ISessionState } from "./sessionState";
-import { ISessionStore } from "./sessionStore";
+import { ISession } from './session';
+import { ISessionState } from './sessionState';
+import { ISessionStore } from './sessionStore';
 
-export {
-    ISession,
-    ISessionState,
-    ISessionStore
-}
+export { ISession, ISessionState, ISessionStore };

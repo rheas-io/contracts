@@ -1,3 +1,3 @@
-import { IDbConnector } from "./connector";
+import { IDbConnector } from './connector';
 
-export { IDbConnector }
+export { IDbConnector };

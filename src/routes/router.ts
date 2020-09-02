@@ -1,7 +1,7 @@
-import { IRoute } from "./route";
-import { IMiddleware } from "./middleware";
-import { IRequest } from "../core/request";
-import { IResponse } from "../core/response";
+import { IRoute } from './route';
+import { IMiddleware } from './middleware';
+import { IRequest } from '../core/request';
+import { IResponse } from '../core/response';
 
 export type INameParams = [string, string[]];
 
@@ -10,7 +10,6 @@ export interface IPipeResolver {
 }
 
 export interface IRouter extends IRoute {
-
     handle(request: IRequest, response: IResponse): Promise<IResponse>;
 
     matchingRoute(request: IRequest): IRoute;

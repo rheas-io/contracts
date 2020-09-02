@@ -1,9 +1,8 @@
-import { IncomingMessage, ServerResponse } from "http";
+import { IncomingMessage, ServerResponse } from 'http';
 
 export interface IServer {
-
     /**
-     * Starts server using node's http module. 
+     * Starts server using node's http module.
      */
     enableHttpServer(): IServer;
 
@@ -17,7 +16,7 @@ export interface IServer {
     /**
      * Creates a db connection using the connector defined in the app
      * configurations.
-     * 
+     *
      * @returns Promise
      */
     initDbConnection(): Promise<any>;
@@ -25,9 +24,9 @@ export interface IServer {
     /**
      * Node Http/Https req handler. Requests are dispatched to the router
      * from this handler.
-     * 
-     * @param req 
-     * @param res 
+     *
+     * @param req
+     * @param res
      */
     listenRequests(req: IncomingMessage, res: ServerResponse): void;
 }

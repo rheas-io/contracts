@@ -1,5 +1,3 @@
-import { IFileManager } from "./fileManager";
+import { IFileManager } from './fileManager';
 
-export {
-    IFileManager
-}
+export { IFileManager };

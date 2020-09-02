@@ -1,4 +1,4 @@
-import { ServerOptions, RequestListener, Server } from "http";
+import { ServerOptions, RequestListener, Server } from 'http';
 
 export interface IServerCreator {
     (options: ServerOptions, listener?: RequestListener): Server;

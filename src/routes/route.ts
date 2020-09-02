@@ -1,8 +1,7 @@
-import { IUriComponent } from "./uri";
-import { IRequestHandler } from "./requestHandler";
+import { IUriComponent } from './uri';
+import { IRequestHandler } from './requestHandler';
 
 export interface IRoute {
-
     routes(...routes: IRoute[]): IRoute;
 
     routeMiddlewares(): string[];

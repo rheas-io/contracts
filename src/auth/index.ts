@@ -1,5 +1,3 @@
-import { IOauthProvider } from "./oauthProvider";
+import { IOauthProvider } from './oauthProvider';
 
-export {
-    IOauthProvider
-};
+export { IOauthProvider };

@@ -1,5 +1,4 @@
 export interface IServiceProvider {
-
     /**
      * Registers the service provider to the container. Avoid adding
      * code that require other services inside this function, as they
@@ -17,28 +16,28 @@ export interface IServiceProvider {
 
     /**
      * Sets the registration status to the value
-     * 
-     * @param status 
+     *
+     * @param status
      */
     setRegistered(status: boolean): void;
 
     /**
      * Sets the booted status to the value
-     * 
-     * @param status 
+     *
+     * @param status
      */
     setBooted(status: boolean): void;
 
     /**
      * Returns the registered status of this provider
-     * 
+     *
      * @returns boolean
      */
     isRegistered(): boolean;
 
     /**
      * Returns the boot status of this provider
-     * 
+     *
      * @returns boolean
      */
     isBooted(): boolean;

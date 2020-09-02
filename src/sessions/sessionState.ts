@@ -1,6 +1,6 @@
-import { AnyObject } from "../core/keyValue";
+import { AnyObject } from '../core/keyValue';
 
 export interface ISessionState {
-    session: string,
-    encrypted: boolean
+    session: string;
+    encrypted: boolean;
 }
