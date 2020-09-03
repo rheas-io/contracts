@@ -21,7 +21,7 @@ export interface IRequestComponent extends IUriComponent {
      *
      * @returns string
      */
-    getParamName(): string;
+    getParamName(): string | null;
 
     /**
      * Returns the parameter value.
