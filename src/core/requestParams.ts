@@ -1,4 +1,5 @@
 import { IRequestComponent } from '../routes/uri';
+import { StringObject } from './keyValue';
 
 export interface IRequestParams extends Map<string, string> {
     /**
@@ -8,4 +9,11 @@ export interface IRequestParams extends Map<string, string> {
      * @param components
      */
     setParameters(components: IRequestComponent[]): void;
+
+    /**
+     * Returns the map as a key-value javascript object.
+     *
+     * @returns StringObject
+     */
+    getStringObject(): StringObject;
 }
