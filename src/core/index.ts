@@ -6,6 +6,7 @@ import { IRequestInput } from './requestInput';
 import { ICacheManager } from './cacheManager';
 import { IAttributeManager } from './attribute';
 import { IServerCreator } from './serverCreator';
+import { IRequestParams } from './requestParams';
 import { IRequestContent } from './requestContent';
 
 export {
@@ -16,6 +17,7 @@ export {
     IRequestInput,
     ICacheManager,
     IServerCreator,
+    IRequestParams,
     IRequestContent,
     IAttributeManager,
 };
