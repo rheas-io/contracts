@@ -6,6 +6,7 @@ import { IncomingMessage } from 'http';
 import { IContainer } from '../container';
 import { IRedirector } from './redirector';
 import { IRequestInput } from './requestInput';
+import { IRequestParams } from './requestParams';
 import { IRequestComponent } from '../routes/uri';
 import { IRequestContent } from './requestContent';
 
@@ -69,12 +70,11 @@ export interface IRequest extends IncomingMessage, IContainer {
     query(): AnyObject;
 
     /**
-     * Returns the params of this request as an array in the
-     * same order.
+     * Returns the matching route params of this request url.
      *
-     * @returns array
+     * @returns IRequestParams
      */
-    params(): string[];
+    params(): IRequestParams;
 
     /**
      * Checks if the request came through a secure channel
