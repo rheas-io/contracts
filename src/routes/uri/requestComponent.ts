@@ -1,5 +1,4 @@
 import { IUriComponent } from './component';
-import { StringObject } from '../../core/keyValue';
 
 export interface IRequestComponent extends IUriComponent {
     /**
@@ -18,9 +17,16 @@ export interface IRequestComponent extends IUriComponent {
     isParam(): boolean;
 
     /**
-     * Returns the parameter as an object.
+     * Returns the parameter name from the route component.
      *
-     * @returns object
+     * @returns string
      */
-    getParam(): StringObject;
+    getParamName(): string;
+
+    /**
+     * Returns the parameter value.
+     *
+     * @returns string
+     */
+    getParam(): string;
 }
