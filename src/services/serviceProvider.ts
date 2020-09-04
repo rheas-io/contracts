@@ -1,3 +1,5 @@
+import { InstanceHandler } from '../container';
+
 export interface IServiceProvider {
     /**
      * Registers the service provider to the container. Avoid adding
@@ -5,6 +7,13 @@ export interface IServiceProvider {
      * may not be registered yet. Use boot function for that purpose.
      */
     register(): void;
+
+    /**
+     * Returns the service resolver function.
+     *
+     * @returns
+     */
+    serviceResolver(): InstanceHandler;
 
     /**
      * Boots the service provider. Inside the boot function
