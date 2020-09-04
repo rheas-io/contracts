@@ -9,13 +9,6 @@ export interface IServiceProvider {
     register(): void;
 
     /**
-     * Returns the service resolver function.
-     *
-     * @returns
-     */
-    serviceResolver(): InstanceHandler;
-
-    /**
      * Boots the service provider. Inside the boot function
      * all the app service providers will be registered. So, add
      * the functions that require other service provider inside this
