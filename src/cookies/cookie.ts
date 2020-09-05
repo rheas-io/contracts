@@ -9,7 +9,7 @@ export interface ICookie {
     setValue(value?: string): ICookie;
 
     /**
-     * Sets the number of seconds from now till the cookie expires.
+     * The unix timestamp at which cookie expires.
      *
      * @param seconds
      */
@@ -89,14 +89,14 @@ export interface ICookie {
     getValue(): string;
 
     /**
-     * Returns the seconds from now till the expiry time.
+     * Returns the unix timestamp of cookie expiry time.
      *
      * @returns
      */
     getExpiry(): number;
 
     /**
-     * Returns the max age of the cookie in seconds.
+     * Returns the max age of the cookie in seconds from now.
      *
      * @returns
      */
