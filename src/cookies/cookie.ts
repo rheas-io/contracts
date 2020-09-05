@@ -1,3 +1,5 @@
+import { SameSite } from './sameSite';
+
 export interface ICookie {
     /**
      * Sets a new cookie value.
@@ -70,7 +72,7 @@ export interface ICookie {
      *
      * @param sameSite
      */
-    setSameSite(sameSite?: string): ICookie;
+    setSameSite(sameSite?: SameSite): ICookie;
 
     /**
      * Returns the cookie name.
@@ -117,7 +119,7 @@ export interface ICookie {
     /**
      * Returns true if the cookie has to be sent only to secure
      * connections.
-     * 
+     *
      * @returns
      */
     isSecure(): boolean;
@@ -125,7 +127,7 @@ export interface ICookie {
     /**
      * Returns true if the cookie should be accessible only with HTTP
      * protocol and not with Javascript.
-     * 
+     *
      * @returns
      */
     isHttpOnly(): boolean;
@@ -136,4 +138,11 @@ export interface ICookie {
      * @returns
      */
     isRaw(): boolean;
+
+    /**
+     * Returns the same site parameter of the cookie.
+     *
+     * @returns
+     */
+    getSameSite(): SameSite;
 }
