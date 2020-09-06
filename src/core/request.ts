@@ -1,4 +1,5 @@
 import { IApp } from './app';
+import { IRoute } from '../routes';
 import { IHeaders } from './headers';
 import { IResponse } from './response';
 import { AnyObject } from './keyValue';
@@ -17,6 +18,14 @@ export interface IRequest extends IncomingMessage, IContainer {
      * @returns IRequest
      */
     boot(app: IApp, res: IResponse): Promise<IRequest>;
+
+    /**
+     * Sets the matching route of this request. Load the route
+     * parameters here.
+     *
+     * @param route
+     */
+    setRoute(route: IRoute): IRequest;
 
     /**
      * Returns the request redirector service.
