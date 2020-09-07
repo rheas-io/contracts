@@ -10,7 +10,7 @@ export interface IFileManager {
      * @param data
      * @param options
      */
-    writeToFile(filePath: string, data: any, options: WriteFileOptions): Promise<boolean>;
+    writeToFile(filePath: string, data: any, options?: WriteFileOptions): Promise<boolean>;
 
     /**
      * Reads a JS file and returns the specified export module.
