@@ -35,6 +35,15 @@ export interface IFileManager {
     readFileSync(filePath: string): Buffer | null;
 
     /**
+     * Reads a file and converts the Buffer to string and returns it.
+     * Blocking function.
+     *
+     * @param filePath
+     * @param encoding
+     */
+    readTextFileSync(filePath: string, encoding?: string): string;
+
+    /**
      * Returns the file stats of the given path.
      *
      * @param path
