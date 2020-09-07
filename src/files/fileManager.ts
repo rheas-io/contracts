@@ -32,7 +32,7 @@ export interface IFileManager {
      * @param filePath
      * @param encoding
      */
-    readFileSync(filePath: string): Buffer | null;
+    readFileSync(filePath: string): Buffer;
 
     /**
      * Reads a file and converts the Buffer to string and returns it.
