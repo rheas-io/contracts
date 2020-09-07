@@ -19,7 +19,7 @@ export interface IServer {
      *
      * @returns Promise
      */
-    initDbConnection(): Promise<any>;
+    connectToDatabase(): Promise<any>;
 
     /**
      * Node Http/Https req handler. Requests are dispatched to the router
