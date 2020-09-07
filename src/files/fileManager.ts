@@ -10,6 +10,14 @@ export interface IFileManager {
     readJs(filePath: string, module?: string): Promise<undefined | any>;
 
     /**
+     * Reads a JS file blocking read.
+     *
+     * @param filePath
+     * @param module
+     */
+    readJs(filePath: string, module?: string): undefined | any;
+
+    /**
      * Read contents of a file and returns as string. Throws an exception if
      * an error occurs when reading
      *
