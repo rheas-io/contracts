@@ -7,7 +7,7 @@ export interface IFileManager {
      * @param filePath
      * @param module
      */
-    readJs(filePath: string, module?: string): Promise<null | any>;
+    readJs(filePath: string, module?: string): Promise<undefined | any>;
 
     /**
      * Read contents of a file and returns as string. Throws an exception if
