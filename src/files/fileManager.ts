@@ -1,6 +1,17 @@
-import { Stats } from 'fs';
+import { Stats, WriteFileOptions } from 'fs';
 
 export interface IFileManager {
+    /**
+     * Asynchronous file write. Throws an error, if the file does not
+     * exists or some write error occurs. If a file exists, it will be
+     * replaced all the time and writes the new data to it.
+     *
+     * @param filePath
+     * @param data
+     * @param options
+     */
+    writeToFile(filePath: string, data: any, options: WriteFileOptions): Promise<boolean>;
+
     /**
      * Reads a JS file and returns the specified export module.
      *
