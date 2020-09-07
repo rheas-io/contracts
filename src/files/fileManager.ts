@@ -15,7 +15,7 @@ export interface IFileManager {
      * @param filePath
      * @param module
      */
-    readJs(filePath: string, module?: string): undefined | any;
+    readJsSync(filePath: string, module?: string): undefined | any;
 
     /**
      * Read contents of a file and returns as string. Throws an exception if
