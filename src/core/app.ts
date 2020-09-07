@@ -11,6 +11,22 @@ export interface IApp extends IContainer, IServer {
     startApp(): void;
 
     /**
+     * This function boots all the application services. 
+     * 
+     * The application services should be booted before it starts
+     * listening to requests.
+     */
+    bootServices():void;
+
+    /**
+     * Connects the application to the database.
+     * 
+     * Ideally the application should start listening to requests only
+     * when the promise gets resolved.
+     */
+    connectToDatabase():Promise<any>;
+
+    /**
      * Returns the application environment variable manager.
      *
      * @returns
