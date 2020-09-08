@@ -16,20 +16,33 @@ export interface ISession {
     touch(): ISession;
 
     /**
-     * Gets the session id if parameter is empty. Or, sets the parameter
-     * as session id.
+     * Sets a new session id. If the given value is not a valid id, we will
+     * create a new one.
      *
-     * @returns
+     * @param id
      */
-    id(id?: string): string;
+    setId(id: string): ISession;
 
     /**
-     * Gets the csrf token of the session if parameter is empty. Or,
-     * sets the parameter as session token
+     * Returns the session id.
      *
      * @returns
      */
-    csrf(token?: string): string;
+    getId(): string;
+
+    /**
+     * Sets a csrf token on the session.
+     *
+     * @returns
+     */
+    setCsrf(token?: string): ISession;
+
+    /**
+     * Returns the CSRF token on the session.
+     *
+     * @returns
+     */
+    getCsrf(): string;
 
     /**
      * Gets a value stored in the session.
