@@ -35,14 +35,22 @@ export interface ISession {
      *
      * @returns
      */
-    setCsrf(token?: string): ISession;
+    setCsrf(token: string): ISession;
+
+    /**
+     * Checks if the given token is a valid one that can be used
+     * as session tokens.
+     *
+     * @param token
+     */
+    isValidToken(token: string): boolean;
 
     /**
      * Returns the CSRF token on the session.
      *
      * @returns
      */
-    getCsrf(): string|null;
+    getCsrf(): string;
 
     /**
      * Gets a value stored in the session.
