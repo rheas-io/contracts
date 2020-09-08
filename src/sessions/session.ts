@@ -24,6 +24,14 @@ export interface ISession {
     setId(id: string): ISession;
 
     /**
+     * Sets the unix timestamp in ms at which the session
+     * expires.
+     *
+     * @param timestamp
+     */
+    setExpiry(timestamp: number): ISession;
+
+    /**
      * Sets a csrf token on the session.
      *
      * @returns
