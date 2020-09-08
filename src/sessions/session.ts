@@ -31,14 +31,6 @@ export interface ISession {
     setCsrf(token: string): ISession;
 
     /**
-     * Checks if the given token is a valid one that can be used
-     * as session tokens.
-     *
-     * @param token
-     */
-    isValidToken(token: string): boolean;
-
-    /**
      * Returns the session id.
      *
      * @returns
