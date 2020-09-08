@@ -24,13 +24,6 @@ export interface ISession {
     setId(id: string): ISession;
 
     /**
-     * Returns the session id.
-     *
-     * @returns
-     */
-    getId(): string;
-
-    /**
      * Sets a csrf token on the session.
      *
      * @returns
@@ -44,6 +37,13 @@ export interface ISession {
      * @param token
      */
     isValidToken(token: string): boolean;
+
+    /**
+     * Returns the session id.
+     *
+     * @returns
+     */
+    getId(): string;
 
     /**
      * Returns the CSRF token on the session.
