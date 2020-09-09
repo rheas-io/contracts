@@ -1,10 +1,11 @@
 import { ICookie } from './cookie';
+import { IManager } from '../core';
 
-export interface ICookieManager {
+export interface ICookieManager extends IManager {
     /**
      * Checks if a cookie with the given name is queued for send.
-     * 
-     * @param name 
+     *
+     * @param name
      */
     hasQueued(name: string): boolean;
 
@@ -22,4 +23,20 @@ export interface ICookieManager {
      * @param name
      */
     unqueue(name: string): void;
+
+    /**
+     * Returns the incoming cookie value for the given key.
+     *
+     * @param name
+     * @param defaultValue
+     */
+    incoming(name: string, defaultValue?: any): any;
+
+    /**
+     * Returns the queued cookie value for the given key.
+     * 
+     * @param name
+     * @param defaultValue
+     */
+    queued(name: string, defaultValue?: any): any;
 }
