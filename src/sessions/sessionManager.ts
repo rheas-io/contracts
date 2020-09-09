@@ -1,4 +1,5 @@
 import { ISession } from './session';
+import { ICookie } from '../cookies';
 
 export interface ISessionManager {
     /**
@@ -53,6 +54,27 @@ export interface ISessionManager {
      * @returns
      */
     getSessionLifetimeInSeconds(): number;
+
+    /**
+     * Returns the session cookie.
+     *
+     * @returns
+     */
+    getSessionCookie(): ICookie;
+
+    /**
+     * Returns the CSRF cookie.
+     *
+     * @returns
+     */
+    getCsrfCookie(): ICookie;
+
+    /**
+     * Returns the encrypted CSRF token value.
+     *
+     * @returns
+     */
+    getEncryptedCsrf(): string;
 
     /**
      * Sets the name of the session cookie.
