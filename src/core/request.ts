@@ -10,6 +10,8 @@ import { IRequestInput } from './requestInput';
 import { IRequestParams } from './requestParams';
 import { IRequestComponent } from '../routes/uri';
 import { IRequestContent } from './requestContent';
+import { ICookieManager } from '../cookies';
+import { ISessionManager } from '../sessions';
 
 export interface IRequest extends IncomingMessage, IContainer {
     /**
@@ -33,6 +35,20 @@ export interface IRequest extends IncomingMessage, IContainer {
      * @returns IRedirector
      */
     redirect(): IRedirector;
+
+    /**
+     * Returns the cookie manager.
+     *
+     * @returns
+     */
+    cookies(): ICookieManager;
+
+    /**
+     * Returns the request session manager.
+     *
+     * @returns
+     */
+    sessions(): ISessionManager;
 
     /**
      * Returns the request header manager.
