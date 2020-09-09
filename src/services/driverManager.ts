@@ -21,6 +21,14 @@ export interface IDriverManager<T> {
     setActiveDriver(name: string, driver?: T): void;
 
     /**
+     * Returns the active driver, if one exists or returns false.
+     * This comes handy to check if an active driver is set or not.
+     *
+     * @returns
+     */
+    hasActiveDriver(): T | false;
+
+    /**
      * Returns the driver instance for the name or the active driver if
      * no name is provided. An exception is thrown if no driver could
      * be found.
