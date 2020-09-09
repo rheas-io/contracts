@@ -39,6 +39,13 @@ export interface ISession {
     getExpiry(): number;
 
     /**
+     * Returns true if the session has expired.
+     *
+     * @returns
+     */
+    hasExpired(): boolean;
+
+    /**
      * Returns the CSRF token on the session.
      *
      * @returns
