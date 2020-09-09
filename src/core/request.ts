@@ -6,12 +6,12 @@ import { AnyObject } from './keyValue';
 import { IncomingMessage } from 'http';
 import { IContainer } from '../container';
 import { IRedirector } from './redirector';
+import { ICookieManager } from '../cookies';
+import { ISessionManager } from '../sessions';
 import { IRequestInput } from './requestInput';
 import { IRequestParams } from './requestParams';
 import { IRequestComponent } from '../routes/uri';
 import { IRequestContent } from './requestContent';
-import { ICookieManager } from '../cookies';
-import { ISessionManager } from '../sessions';
 
 export interface IRequest extends IncomingMessage, IContainer {
     /**
