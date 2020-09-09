@@ -2,6 +2,43 @@ import { ISession } from './session';
 
 export interface ISessionManager {
     /**
+     * Loads the session with the given id from the current active
+     * driver.
+     *
+     * @param id
+     */
+    loadSession(id: string): Promise<ISession | null>;
+
+    /**
+     * Starts the given session, if it is a valid session. Otherwise
+     * creates a new session and sets it as the current/active session of
+     * the request cycle.
+     *
+     * @param session
+     */
+    startSession(session: ISession | null): Promise<ISession>;
+
+    /**
+     * Sets a session as the current/active session of the request lifecycle.
+     *
+     * @param session
+     */
+    setActiveSession(session: ISession): ISessionManager;
+
+    /**
+     * Ends the current session by writing it to the data store.
+     *
+     * @returns
+     */
+    endSession(): ISessionManager;
+
+    /**
+     * Returns true if the current request cycle has a valid
+     * session attached to it.
+     */
+    hasSession(): ISession | false;
+
+    /**
      * Creates a new session and returns it.
      *
      * @returns
@@ -16,4 +53,32 @@ export interface ISessionManager {
      * @returns
      */
     getSessionLifetimeInSeconds(): number;
+
+    /**
+     * Sets the name of the session cookie.
+     *
+     * @param name
+     */
+    setSessionCookieName(name: string): ISessionManager;
+
+    /**
+     * Sets the name of the CSRF cookie.
+     *
+     * @param name
+     */
+    setCsrfCookieName(name: string): ISessionManager;
+
+    /**
+     * Returns the session cookie name
+     *
+     * @returns
+     */
+    getSessionCookieName(): string;
+
+    /**
+     * Returns the CSRF cookie name
+     *
+     * @returns
+     */
+    getCsrfCookieName(): string;
 }
