@@ -33,10 +33,10 @@ export interface ISessionManager {
     endSession(): ISessionManager;
 
     /**
-     * Returns true if the current request cycle has a valid
-     * session attached to it.
+     * Returns the active request session if one is available or
+     * `null` is returned.
      */
-    hasSession(): ISession | false;
+    getSession(): ISession | null;
 
     /**
      * Creates a new session and returns it.
