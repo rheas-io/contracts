@@ -21,13 +21,6 @@ export interface ISessionManager {
     startSession(session: ISession | null): Promise<ISession>;
 
     /**
-     * Sets a session as the current/active session of the request lifecycle.
-     *
-     * @param session
-     */
-    setActiveSession(session: ISession): ISessionManager;
-
-    /**
      * Ends the current session by writing it to the data store.
      *
      * @returns
