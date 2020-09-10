@@ -21,11 +21,11 @@ export interface ISessionManager {
     startSession(session: ISession | null): Promise<ISession>;
 
     /**
-     * Ends the current session by writing it to the data store.
+     * Ends the given session by writing it to the data store.
      *
-     * @returns
+     * @param session
      */
-    endSession(): ISessionManager;
+    endSession(session: ISession): ISessionManager;
 
     /**
      * Returns the active request session if one is available or
