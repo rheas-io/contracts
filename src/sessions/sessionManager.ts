@@ -1,5 +1,6 @@
 import { ISession } from './session';
 import { ICookie } from '../cookies';
+import { AnyObject } from '../core/keyValue';
 
 export interface ISessionManager {
     /**
@@ -68,6 +69,21 @@ export interface ISessionManager {
      * @returns
      */
     csrfCookieOf(session: ISession): ICookie;
+
+    /**
+     * Sets the config session properties on the cookie and
+     * returns it.
+     *
+     * @param cookie
+     */
+    getCookieWithConfigProperties(cookie: ICookie): ICookie;
+
+    /**
+     * Returns the session configurations.
+     *
+     * @returns
+     */
+    getSessionConfig(): AnyObject;
 
     /**
      * Returns the encrypted CSRF token value.
