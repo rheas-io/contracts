@@ -86,11 +86,11 @@ export interface ISessionManager {
     getSessionConfig(): AnyObject;
 
     /**
-     * Returns the encrypted CSRF token value.
+     * Returns the hashed CSRF token value.
      *
      * @returns
      */
-    encryptedCsrfOf(session: ISession): string;
+    hashedCsrfOf(session: ISession): Promise<string>;
 
     /**
      * Sets the name of the session cookie.
