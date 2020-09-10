@@ -50,7 +50,7 @@ export interface ISession {
      *
      * @returns
      */
-    getCsrf(): string | null;
+    getCsrf(): string;
 
     /**
      * Gets a value stored in the session.
