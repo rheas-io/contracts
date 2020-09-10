@@ -1,5 +1,6 @@
 import { ICookie } from './cookie';
 import { IManager } from '../core';
+import { KeyValue } from '../core/keyValue';
 
 export interface ICookieManager extends IManager {
     /**
@@ -28,15 +29,27 @@ export interface ICookieManager extends IManager {
      * Returns the incoming cookie value for the given key.
      *
      * @param name
-     * @param defaultValue
      */
-    incoming(name: string, defaultValue?: any): any;
+    incoming(name: string): ICookie | null;
 
     /**
      * Returns the queued cookie value for the given key.
-     * 
+     *
      * @param name
-     * @param defaultValue
      */
-    queued(name: string, defaultValue?: any): any;
+    queued(name: string): ICookie | null;
+
+    /**
+     * Returns all the parsed incoming cookies.
+     *
+     * @returns
+     */
+    incomingCookies(): KeyValue<ICookie>;
+
+    /**
+     * Returns all the queued cookies.
+     *
+     * @returns
+     */
+    queuedCookies(): KeyValue<ICookie>;
 }
