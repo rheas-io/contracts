@@ -90,23 +90,9 @@ export interface ISessionManager {
     setSessionCookieName(name: string): ISessionManager;
 
     /**
-     * Sets the name of the CSRF cookie.
-     *
-     * @param name
-     */
-    setCsrfCookieName(name: string): ISessionManager;
-
-    /**
      * Returns the session cookie name
      *
      * @returns
      */
     getSessionCookieName(): string;
-
-    /**
-     * Returns the CSRF cookie name
-     *
-     * @returns
-     */
-    getCsrfCookieName(): string;
 }
