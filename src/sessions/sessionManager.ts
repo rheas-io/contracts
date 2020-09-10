@@ -50,26 +50,14 @@ export interface ISessionManager {
     getSessionLifetimeInSeconds(): number;
 
     /**
-     * Returns the session cookie.
+     * Returns a cookie with the given name, value and expiry. Other
+     * properties are populated from the session configuration data.
      *
-     * @returns
+     * @param name
+     * @param value
+     * @param expiry
      */
-    sessionCookieOf(session: ISession): ICookie;
-
-    /**
-     * Returns the CSRF cookie.
-     *
-     * @returns
-     */
-    csrfCookieOf(session: ISession): ICookie;
-
-    /**
-     * Returns true if the expire_on_close flag is set to a truthy value
-     * on the session configuration.
-     *
-     * @returns
-     */
-    shouldExpireOnClose(): boolean;
+    getCookie(name: string, value: string, expiry: number): ICookie;
 
     /**
      * Sets the config session properties on the cookie and
@@ -78,6 +66,14 @@ export interface ISessionManager {
      * @param cookie
      */
     getCookieWithConfigProperties(cookie: ICookie): ICookie;
+
+    /**
+     * Returns true if the expire_on_close flag is set to a truthy value
+     * on the session configuration.
+     *
+     * @returns
+     */
+    shouldExpireOnClose(): boolean;
 
     /**
      * Returns the session configurations.
