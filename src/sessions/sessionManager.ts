@@ -64,6 +64,14 @@ export interface ISessionManager {
     csrfCookieOf(session: ISession): ICookie;
 
     /**
+     * Returns true if the expire_on_close flag is set to a truthy value
+     * on the session configuration.
+     *
+     * @returns
+     */
+    shouldExpireOnClose(): boolean;
+
+    /**
      * Sets the config session properties on the cookie and
      * returns it.
      *
