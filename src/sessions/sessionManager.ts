@@ -60,21 +60,21 @@ export interface ISessionManager {
      *
      * @returns
      */
-    getSessionCookie(): ICookie;
+    sessionCookieOf(session: ISession): ICookie;
 
     /**
      * Returns the CSRF cookie.
      *
      * @returns
      */
-    getCsrfCookie(): ICookie;
+    csrfCookieOf(session: ISession): ICookie;
 
     /**
      * Returns the encrypted CSRF token value.
      *
      * @returns
      */
-    getEncryptedCsrf(): string;
+    encryptedCsrfOf(session: ISession): string;
 
     /**
      * Sets the name of the session cookie.
