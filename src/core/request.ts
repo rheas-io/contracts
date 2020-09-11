@@ -58,6 +58,14 @@ export interface IRequest extends IncomingMessage, IContainer {
     reqHeaders(): IHeaders;
 
     /**
+     * Returns a single string value from the header. An empty
+     * string is returned if no header is defined.
+     *
+     * @param header
+     */
+    stringFromHeader(header: string): string;
+
+    /**
      * Returns the request content manager. Responsible for anything
      * related to content-types, formats, mime-types etc.
      *
