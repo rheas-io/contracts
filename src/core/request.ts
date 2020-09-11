@@ -7,7 +7,7 @@ import { IncomingMessage } from 'http';
 import { IContainer } from '../container';
 import { IRedirector } from './redirector';
 import { ICookieManager } from '../cookies';
-import { ISessionManager } from '../sessions';
+import { ISession, ISessionManager } from '../sessions';
 import { IRequestInput } from './requestInput';
 import { IRequestParams } from './requestParams';
 import { IRequestComponent } from '../routes/uri';
@@ -80,6 +80,16 @@ export interface IRequest extends IncomingMessage, IContainer {
      * @param exemptKey
      */
     isExemptedIn(exemptKey: string): boolean;
+
+    /**
+     * Returns the current session if the request is CSRF protected. Otherwise
+     * returns false.
+     * 
+     * Throws an exception when the session manager is not registered.
+     * 
+     * @returns
+     */
+    isCsrfProtected(): ISession | false;
 
     /**
      * Returns the request content manager. Responsible for anything
