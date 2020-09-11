@@ -74,6 +74,14 @@ export interface IRequest extends IncomingMessage, IContainer {
     isReadRequest(): boolean;
 
     /**
+     * Returns true if the current request path is exempted in the app
+     * exemption list for the key.
+     *
+     * @param exemptKey
+     */
+    isExemptedIn(exemptKey: string): boolean;
+
+    /**
      * Returns the request content manager. Responsible for anything
      * related to content-types, formats, mime-types etc.
      *
