@@ -66,6 +66,14 @@ export interface IRequest extends IncomingMessage, IContainer {
     stringFromHeader(header: string): string;
 
     /**
+     * Returns true if the request is read request ie reuest method
+     * is one of HEAD, GET and OPTIONS.
+     *
+     * @returns
+     */
+    isReadRequest(): boolean;
+
+    /**
      * Returns the request content manager. Responsible for anything
      * related to content-types, formats, mime-types etc.
      *
