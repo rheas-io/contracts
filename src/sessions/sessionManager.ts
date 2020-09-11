@@ -29,15 +29,6 @@ export interface ISessionManager {
     endSession(session: ISession): ISessionManager;
 
     /**
-     * Returns true if the session CSRF token matches with the request
-     * CSRF value.
-     *
-     * @param req
-     * @param session
-     */
-    isRequestCsrfProtected(req: IRequest, session: ISession): boolean;
-
-    /**
      * Returns the active request session if one is available or
      * `null` is returned.
      */
