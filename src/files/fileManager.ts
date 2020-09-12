@@ -2,6 +2,14 @@ import { Stats, WriteFileOptions } from 'fs';
 
 export interface IFileManager {
     /**
+     * Reads a JS file and returns the specified export module.
+     *
+     * @param filePath
+     * @param module
+     */
+    readJs(filePath: string, module?: string): Promise<undefined | any>;
+
+    /**
      * Asynchronous file write. Throws an error, if the file does not
      * exists or some write error occurs. If a file exists, it will be
      * replaced all the time and writes the new data to it.
@@ -13,12 +21,12 @@ export interface IFileManager {
     writeToFile(filePath: string, data: any, options?: WriteFileOptions): Promise<boolean>;
 
     /**
-     * Reads a JS file and returns the specified export module.
+     * Deletes a file from the filesystem. Only files will be deleted and
+     * trying to delete a directory will throw an exception.
      *
      * @param filePath
-     * @param module
      */
-    readJs(filePath: string, module?: string): Promise<undefined | any>;
+    remove(filePath: string): Promise<boolean>;
 
     /**
      * Reads a JS file blocking read.
