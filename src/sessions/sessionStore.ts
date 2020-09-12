@@ -27,7 +27,7 @@ export interface ISessionStore {
      *
      * @return
      */
-    remove(id: string): boolean;
+    remove(id: string): Promise<boolean>;
 
     /**
      * Clears expired sessions in the store.
