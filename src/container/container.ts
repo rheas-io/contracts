@@ -1,8 +1,7 @@
-import { IManager } from '../core/manager';
 import { InstanceHandler } from './instanceHandler';
 import { IContainerInstance } from './containerInstance';
 
-export interface IContainer extends IManager {
+export interface IContainer {
     /**
      * Binds a singleton resolver to the container
      *
@@ -30,4 +29,13 @@ export interface IContainer extends IManager {
      * @param singleton
      */
     instance<T>(name: string, instance: T, singleton: boolean): IContainerInstance;
+
+    /**
+     * Returns the binding stored in this container. Throws an exception
+     * if no binding is registered for the key, or there are any error
+     * resolving the binding.
+     *
+     * @param key
+     */
+    get(key: string): any;
 }
