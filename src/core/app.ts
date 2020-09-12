@@ -1,5 +1,5 @@
 import { IServer } from './server';
-import { IManager } from './manager';
+import { IGetter } from './getter';
 import { IServiceManager } from '../services';
 import { IContainer } from '../container/container';
 
@@ -23,14 +23,14 @@ export interface IApp extends IContainer, IServer {
      *
      * @returns
      */
-    env(): IManager;
+    env(): IGetter;
 
     /**
      * Returns the application config manager.
      *
      * @returns
      */
-    configs(): IManager;
+    configs(): IGetter;
 
     /**
      * Returns the application service manager.

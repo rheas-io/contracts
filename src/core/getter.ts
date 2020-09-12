@@ -1,6 +1,6 @@
-export interface IManager {
+export interface IGetter {
     /**
-     * Returns the binding stored in this container.
+     * Returns the binding stored in this contract.
      *
      * @param key
      * @param defaultValue

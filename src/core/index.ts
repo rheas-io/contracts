@@ -1,5 +1,5 @@
 import { IApp } from './app';
-import { IManager } from './manager';
+import { IGetter } from './getter';
 import { IHeaders } from './headers';
 import { IRedirector } from './redirector';
 import { IRequestInput } from './requestInput';
@@ -11,7 +11,7 @@ import { IRequestContent } from './requestContent';
 
 export {
     IApp,
-    IManager,
+    IGetter,
     IHeaders,
     IRedirector,
     IRequestInput,

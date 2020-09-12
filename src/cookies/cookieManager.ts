@@ -1,8 +1,8 @@
 import { ICookie } from './cookie';
-import { IManager } from '../core';
+import { IGetter } from '../core/getter';
 import { KeyValue } from '../core/keyValue';
 
-export interface ICookieManager extends IManager {
+export interface ICookieManager extends IGetter {
     /**
      * Checks if a cookie with the given name is queued for send.
      *

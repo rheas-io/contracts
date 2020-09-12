@@ -1,6 +1,6 @@
-import { IManager } from './manager';
+import { IGetter } from './getter';
 
-export interface IHeaders extends IManager {
+export interface IHeaders extends IGetter {
     /**
      * Returns a date object if a date header is present and its value is a
      * parsable date string.
