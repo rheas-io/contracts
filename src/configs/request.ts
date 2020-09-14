@@ -1,6 +1,7 @@
+import { IConfig } from './config';
 import { IRequestProviders } from './requestProviders';
 
-export interface IRequestConfig {
+export interface IRequestConfig extends IConfig {
     /**
      * Service providers that has the lifecycle same as that of
      * request. These services will be different for each requests
@@ -9,6 +10,8 @@ export interface IRequestConfig {
      *
      * Keys like app, response and services can't be used as they are
      * internally registered in the framework.
+     *
+     * @property
      */
     providers: IRequestProviders;
 }

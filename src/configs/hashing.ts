@@ -1,18 +1,47 @@
-import { AnyObject } from '../core/keyValue';
+import { IConfig } from './config';
 
-export interface IBcryptConfig extends AnyObject {
+export interface IHashConfig extends IConfig {
+    /**
+     * Application hashing key.
+     *
+     * @property
+     */
+    key: string;
+
+    /**
+     * Default hashing algo name.
+     *
+     * @property
+     */
+    driver: string;
+
+    /**
+     * Properties specific to bcrypt hashing algo.
+     *
+     * @property
+     */
+    bcrypt: IBcryptConfig;
+
+    /**
+     * Properties specific to argon hashing algo.
+     *
+     * @property
+     */
+    argon: IArgonConfig;
+}
+
+/**
+ * Bcrypt algo configurations.
+ */
+export interface IBcryptConfig extends IConfig {
     rounds: number;
 }
 
-export interface IArgonConfig extends AnyObject {
+/**
+ * Argon algo configurations.
+ */
+export interface IArgonConfig extends IConfig {
     memory: number;
     threads: number;
     time: number;
-}
-
-export interface IHashConfig extends AnyObject {
-    key: string;
-    driver: string;
-    bcrypt: IBcryptConfig;
-    argon: IArgonConfig;
 }
