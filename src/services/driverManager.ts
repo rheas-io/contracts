@@ -10,7 +10,7 @@ export interface IDriverManager<T> {
     registerDriver(name: string, driver: T, force: boolean): void;
 
     /**
-     * Sets an active driver key/name, if one is already registered. Or throws
+     * Sets a default driver key/name, if one is already registered. Or throws
      * an exception.
      *
      * If a second argument is given, then the driver will be registered first.
@@ -18,18 +18,17 @@ export interface IDriverManager<T> {
      * @param name
      * @param driver
      */
-    setActiveDriver(name: string, driver?: T): void;
+    setDefaultDriver(name: string, driver?: T): void;
 
     /**
-     * Returns the active driver, if one exists or returns false.
-     * This comes handy to check if an active driver is set or not.
+     * Returns the default driver, if one exists or returns false.
      *
      * @returns
      */
-    hasActiveDriver(): T | false;
+    defaultDriver(): T | false;
 
     /**
-     * Returns the driver instance for the name or the active driver if
+     * Returns the driver instance for the name or the default driver if
      * no name is provided. An exception is thrown if no driver could
      * be found.
      *
