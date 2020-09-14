@@ -1,4 +1,5 @@
 import { IMail } from './mail';
+import { IMailer } from './mailer';
 import { IMailMessage } from './mailMessage';
 
-export { IMail, IMailMessage };
+export { IMail, IMailer, IMailMessage };

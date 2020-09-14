@@ -1,5 +1,11 @@
-import { ISendable } from "../notifications/sendable";
+import { IMail } from './mail';
+import { IMessage } from '../notifications';
 
-export interface IMailMessage extends ISendable{
-    
+export interface IMailMessage extends IMessage {
+    /**
+     * Returns the underlying email.
+     *
+     * @returns
+     */
+    mail(): IMail;
 }
