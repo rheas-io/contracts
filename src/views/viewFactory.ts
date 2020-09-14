@@ -19,6 +19,13 @@ export interface IViewFactory {
     setSourceDirectory(srcDir: string): IViewFactory;
 
     /**
+     * Returns default view source directory.
+     *
+     * @returns
+     */
+    sourceDir(): string;
+
+    /**
      * Sets a key value data that has to be shared across different
      * views.
      *
