@@ -32,5 +32,8 @@
   "bugs": {
     "url": "https://github.com/rheas-io/contracts/issues"
   },
-  "homepage": "https://github.com/rheas-io/contracts#readme"
+  "homepage": "https://github.com/rheas-io/contracts#readme",
+  "dependencies": {
+    "@types/nodemailer": "^6.4.0"
+  }
 }
