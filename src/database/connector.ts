@@ -1,7 +1,22 @@
-import { IDbConfig } from '../configs';
+export interface IDbConnector<T> {
+    /**
+     * Connects to the database and returns a connection on success.
+     *
+     * Throws an exception when database connection fails.
+     *
+     * @returns
+     * @throws
+     */
+    connect(): Promise<T>;
 
-export interface IDbConnector {
-    _config: IDbConfig;
-
-    connect(): Promise<any>;
+    /**
+     * Returns an active database connection. If no connection is found, the
+     * function attempts to create one.
+     *
+     * Throws exception if connection was not made.
+     *
+     * @returns
+     * @throws
+     */
+    connection(): Promise<T>;
 }
