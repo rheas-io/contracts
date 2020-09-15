@@ -4,5 +4,5 @@ export interface ISendable {
      *
      * @returns
      */
-    send(): void;
+    send(): Promise<void>;
 }
