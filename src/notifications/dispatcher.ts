@@ -8,7 +8,7 @@ export interface IDispatcher<T extends ISendable = IMessage> {
      *
      * @param message
      */
-    now(message: T): void;
+    now(message: T): Promise<void>;
 
     /**
      * Sends the given message after a delay.
