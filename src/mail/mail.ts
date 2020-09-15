@@ -88,6 +88,13 @@ export interface IMail {
     view(path: string, data?: AnyObject, srcDir?: string): IMail;
 
     /**
+     * Returns true if the mail has atleast one recipient.
+     *
+     * @returns
+     */
+    hasRecipients(): boolean;
+
+    /**
      * Returns the html content of this email.
      *
      * @returns
