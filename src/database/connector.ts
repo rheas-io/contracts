@@ -19,4 +19,12 @@ export interface IDbConnector<T> {
      * @throws
      */
     connection(): Promise<T>;
+
+    /**
+     * Closes all the database connections. Returns a promise of all connection close
+     * requests.
+     *
+     * @returns
+     */
+    closeConnections(): Promise<void[]>;
 }
