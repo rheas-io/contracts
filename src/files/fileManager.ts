@@ -119,5 +119,5 @@ export interface IFileManager {
      * @param path
      * @param mode
      */
-    mkDirSync(path: string, mode: number): void;
+    mkDirSync(path: string, mode?: number): void;
 }
