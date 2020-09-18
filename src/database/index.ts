@@ -1,3 +1,5 @@
+import { IModel } from './model';
+import { IMongoModel } from './mongoModel';
 import { IDbConnector } from './connector';
 
-export { IDbConnector };
+export { IModel, IMongoModel, IDbConnector };
