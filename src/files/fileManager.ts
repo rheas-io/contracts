@@ -111,4 +111,13 @@ export interface IFileManager {
      * @param dirPath
      */
     directoryExistsSync(dirPath: string): boolean;
+
+    /**
+     * Makes a directory if it does not exists. By default, directory
+     * is recursively created.
+     *
+     * @param path
+     * @param mode
+     */
+    mkDirSync(path: string, mode: number): void;
 }
