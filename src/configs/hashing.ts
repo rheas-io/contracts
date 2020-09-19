@@ -20,14 +20,14 @@ export interface IHashConfig extends IConfig {
      *
      * @property
      */
-    bcrypt: IBcryptConfig;
+    bcrypt?: IBcryptConfig;
 
     /**
      * Properties specific to argon hashing algo.
      *
      * @property
      */
-    argon: IArgonConfig;
+    argon?: IArgonConfig;
 }
 
 /**

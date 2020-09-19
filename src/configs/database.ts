@@ -1,6 +1,11 @@
 import { IConfig } from './config';
 
 export interface IDbConfig extends IConfig {
+    /**
+     * Default application db connector.
+     *
+     * @property
+     */
     connector: 'sequelize' | 'mongoose';
 
     /**
