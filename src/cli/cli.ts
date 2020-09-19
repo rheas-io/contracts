@@ -7,7 +7,7 @@ export interface ICli {
      * the command to its respective handler. If no command is registered, we
      * will exit showing all the command list.
      */
-    handleRequest(): void;
+    handleRequest(): Promise<void>;
 
     /**
      * Registers a new command class mapped to `key`
