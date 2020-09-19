@@ -6,14 +6,14 @@ export interface IEncrypter {
      *
      * @param cipher
      */
-    keyLength(cipher: CipherGCMTypes): number;
+    keyLength(cipher?: CipherGCMTypes): number;
 
     /**
      * Generates a key for the given cipher.
      *
      * @param cipher
      */
-    generateKey(cipher: CipherGCMTypes): Promise<string>;
+    generateKey(cipher?: CipherGCMTypes): Promise<string>;
 
     /**
      * Encrypts the given value and returns a hex response
