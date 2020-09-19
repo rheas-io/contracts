@@ -119,5 +119,13 @@ export interface IFileManager {
      * @param path
      * @param mode
      */
-    mkDirSync(path: string, mode?: number): void;
+    mkdirSync(path: string, mode?: number): void;
+
+    /**
+     * Returns the path of all the files/dir in the `srcDir`. Returns an
+     * empty array if any sort of error is thrown.
+     *
+     * @param srcDir
+     */
+    dirContents(srcDir: string): string[];
 }
