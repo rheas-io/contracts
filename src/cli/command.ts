@@ -2,5 +2,5 @@ export interface ICommand {
     /**
      * Processes the command.
      */
-    handle(): void;
+    handle(): Promise<void>;
 }
