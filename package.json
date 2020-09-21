@@ -12,6 +12,9 @@
     "nodejs",
     "framework"
   ],
+  "publishConfig": {
+    "access": "public"
+  },
   "scripts": {
     "tsc": "tsc",
     "copypackage": "cp -rf package.json build",
