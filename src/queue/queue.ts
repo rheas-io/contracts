@@ -11,24 +11,16 @@ export interface IQueue {
     addJob(job: IJob): IQueue;
 
     /**
-     * Fetches the jobs to be processed in the next tick and processes
-     * all of them.
+     * The queue works on itself during the lifetime of the application. We
+     * poll queue every n seconds set by `_pollInterval` property for the next
+     * jobs and process them.
+     *
+     * External workers can also consume jobs, if they have access to the queue
+     * store.
      *
      * @returns
      */
-    processJobs(): Promise<any>;
-
-    /**
-     * Resets the queue check timer.
-     * 
-     * Instead of polling, queue uses a timeout to process jobs. When to process next
-     * is determined by the immediate next job in the queue or the guard interval which
-     * is the maximum time a queue will sit idle.
-     * 
-     * The queue uses only one timeout which is reset recursively after every job check
-     * or when a new job is added.
-     */
-    resetTimer(): Promise<void>;
+    work(): Promise<any>;
 
     /**
      * Processes a job in the queue.
