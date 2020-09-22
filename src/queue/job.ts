@@ -10,6 +10,13 @@ export interface IJob extends EventEmitter {
     process<T = any>(): Promise<T>;
 
     /**
+     * Returns true if the job processing has failed maxAttempts.
+     *
+     * @returns
+     */
+    triedMaxAttempts(): boolean;
+
+    /**
      * Process a job at a later time.
      *
      * @param later
@@ -18,9 +25,9 @@ export interface IJob extends EventEmitter {
 
     /**
      * Parses the data from the queue store into properties necessary to
-     * process the 
-     * 
-     * @param data 
+     * process the
+     *
+     * @param data
      */
     parse(data: string): any;
 
