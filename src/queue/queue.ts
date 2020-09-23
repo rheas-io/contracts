@@ -8,7 +8,7 @@ export interface IQueue {
      *
      * @param job
      */
-    addJob(job: IJob): IQueue;
+    insert(job: IJob): IQueue;
 
     /**
      * The queue works on itself during the lifetime of the application. We
@@ -27,21 +27,24 @@ export interface IQueue {
      *
      * @param job
      */
-    processJob(job: IJob): Promise<void>;
+    processJob(job: IJob): Promise<any>;
 
     /**
-     * Returns a list of jobs that has to be processed immediately.
+     * Mark the job as failed on the active queue list. The job will
+     * be retried when the reserved time passes the retry time period.
      *
-     * @returns
+     * @param job
      */
-    getNextJobs(): Promise<IJob[]>;
+    failJob(job: IJob, err?: Error): Promise<any>;
 
     /**
-     * Returns a list of failed jobs.
+     * Marks the job as failed forever. This happens when the job has
+     * already hit the max retry limit. Remove the job from the active
+     * queue list, as we won't retry it again.
      *
-     * @returns
+     * @param job
      */
-    getFailedJobs(): Promise<IJob[]>;
+    failJobForever(job: IJob): Promise<any>;
 
     /**
      * Marks the job as finished in the queue store.
@@ -51,9 +54,24 @@ export interface IQueue {
     finishJob(job: IJob): Promise<any>;
 
     /**
+     * Returns a list of jobs that has to be processed immediately. Return
+     * a maximum of n number of jobs set by the property `concurrentJobs`.
+     *
+     * @returns
+     */
+    getNextJobs(): Promise<IJob[]>;
+
+    /**
      * Sets the queue processing concurrency.
      *
-     * @param parallelProcesses
+     * @param concurrentJobs
      */
-    setConcurrency(parallelProcesses: number): IQueue;
+    setConcurrency(concurrentJobs: number): IQueue;
+
+    /**
+     * Sets the job timeout in seconds.
+     *
+     * @param inSeconds
+     */
+    setTimeout(inSeconds: number): IQueue;
 }
