@@ -1,13 +1,30 @@
-import { EventEmitter } from 'events';
 import { ILaterTime } from '../notifications';
 
-export interface IJob extends EventEmitter {
+export interface IJob {
     /**
      * Starts processing the job.
      *
      * @returns
      */
     process<T = any>(): Promise<T>;
+
+    /**
+     * Perform some action when the job processes completely.
+     */
+    onSuccess(): void;
+
+    /**
+     * Perform some action when the job process fails. This is executed every
+     * time the job process fails.
+     */
+    onFailure(): void;
+
+    /**
+     * Perform some action when the job process fails permanently. This is executed
+     * when the job hits the max attempt limit and still fails. The job will no longer
+     * be attempted after marking it as permanent failure.
+     */
+    onPermanentFailure(): void;
 
     /**
      * Returns true if the job processing has failed maxAttempts.
@@ -17,11 +34,85 @@ export interface IJob extends EventEmitter {
     triedMaxAttempts(): boolean;
 
     /**
+     * Returns the unique job id if one is already set, or we will set
+     * one and return it.
+     *
+     * @returns
+     */
+    id(): string;
+
+    /**
+     * Returns the number of times the job process was attempted.
+     *
+     * @returns
+     */
+    attempts(): number;
+
+    /**
+     * Sets the max attempts a worker should make before marking this job
+     * as a permanent failure.
+     *
+     * @returns
+     */
+    maxAttempts(attempts: number): IJob;
+
+    /**
+     * The UNIX epoch time in ms at which the job was locked for processing
+     * by a worker.
+     *
+     * @returns
+     */
+    lockTime(): number;
+
+    /**
+     * Returns the UNIX epoch time in ms at which the job is available for
+     * processing.
+     *
+     * @return
+     */
+    availableAt(): number;
+
+    /**
+     * Sets the number of seconds after which a failed job should be retried.
+     *
+     * @returns
+     */
+    retryAfter(seconds: number): IJob;
+
+    /**
+     * Returns true, if the job is still locked or has not passed it's retry time.
+     *
+     * @returns
+     */
+    isStillLocked(): boolean;
+
+    /**
+     * Returns true, if the job has passed its delay time.
+     *
+     * @returns
+     */
+    isAvailable(): boolean;
+
+    /**
+     * Cancels a job in the queue.
+     *
+     * @returns
+     */
+    cancel(): IJob;
+
+    /**
+     * Returns true if the job was cancelled before processing.
+     *
+     * @returns
+     */
+    isCancelled(): boolean;
+
+    /**
      * Process a job at a later time.
      *
      * @param later
      */
-    later(later: ILaterTime): void;
+    later(later: ILaterTime): IJob;
 
     /**
      * Parses the data from the queue store into properties necessary to

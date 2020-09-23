@@ -8,7 +8,7 @@ export interface IQueue {
      *
      * @param job
      */
-    insert(job: IJob): IQueue;
+    insert(job: IJob): Promise<boolean>;
 
     /**
      * The queue works on itself during the lifetime of the application. We
