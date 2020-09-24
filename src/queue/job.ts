@@ -1,30 +1,32 @@
+import { IQueable } from './queable';
+import { JsonObject } from '../core/keyValue';
 import { ILaterTime } from '../notifications';
 
-export interface IJob {
+export interface IJob<T extends JsonObject = any> extends IQueable<T> {
     /**
      * Starts processing the job.
      *
      * @returns
      */
-    process<T = any>(): Promise<T>;
+    process(): Promise<any>;
 
     /**
      * Perform some action when the job processes completely.
      */
-    onSuccess(): void;
+    onSuccess(): Promise<any>;
 
     /**
      * Perform some action when the job process fails. This is executed every
      * time the job process fails.
      */
-    onFailure(): void;
+    onFailure(): Promise<any>;
 
     /**
      * Perform some action when the job process fails permanently. This is executed
      * when the job hits the max attempt limit and still fails. The job will no longer
      * be attempted after marking it as permanent failure.
      */
-    onPermanentFailure(): void;
+    onPermanentFailure(): Promise<any>;
 
     /**
      * Returns true if the job processing has failed maxAttempts.
@@ -39,7 +41,7 @@ export interface IJob {
      *
      * @returns
      */
-    id(): string;
+    id(): Promise<string>;
 
     /**
      * Returns the number of times the job process was attempted.
@@ -54,7 +56,21 @@ export interface IJob {
      *
      * @returns
      */
-    maxAttempts(attempts: number): IJob;
+    maxAttempts(attempts: number): IJob<T>;
+
+    /**
+     * Sets the queue on which the job must be executed.
+     *
+     * @param queue
+     */
+    onQueue(queue: string): IJob<T>;
+
+    /**
+     * Returns the queue in which the job has to be executed.
+     *
+     * @returns
+     */
+    queue(): string;
 
     /**
      * The UNIX epoch time in ms at which the job was locked for processing
@@ -77,7 +93,7 @@ export interface IJob {
      *
      * @returns
      */
-    retryAfter(seconds: number): IJob;
+    retryAfter(seconds: number): IJob<T>;
 
     /**
      * Returns true, if the job is still locked or has not passed it's retry time.
@@ -98,7 +114,7 @@ export interface IJob {
      *
      * @returns
      */
-    cancel(): IJob;
+    cancel(): Promise<IJob<T>>;
 
     /**
      * Returns true if the job was cancelled before processing.
@@ -112,22 +128,5 @@ export interface IJob {
      *
      * @param later
      */
-    later(later: ILaterTime): IJob;
-
-    /**
-     * Parses the data from the queue store into properties necessary to
-     * process the
-     *
-     * @param data
-     */
-    parse(data: string): any;
-
-    /**
-     * The data that has to be saved in the queue store, so that the job
-     * can be retreived later from the store and can be parsed to process
-     * the job.
-     *
-     * @returns
-     */
-    toString(): string;
+    later(later: ILaterTime): IJob<T>;
 }

@@ -30,6 +30,13 @@ export interface IQueue {
     processJob(job: IJob): Promise<any>;
 
     /**
+     * Marks the job as cancelled on the queue.
+     *
+     * @param job
+     */
+    cancelJob(job: IJob): Promise<any>;
+
+    /**
      * Mark the job as failed on the active queue list. The job will
      * be retried when the reserved time passes the retry time period.
      *
