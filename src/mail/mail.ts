@@ -1,4 +1,4 @@
-import { AnyObject } from '../core/keyValue';
+import { AnyObject, JsonObject } from '../core/keyValue';
 import { Address, Options } from 'nodemailer/lib/mailer';
 
 export type Addresses = string | Address | Array<string | Address>;
@@ -106,5 +106,5 @@ export interface IMail {
      *
      * @returns
      */
-    data(): Options;
+    data(): Options & JsonObject;
 }
