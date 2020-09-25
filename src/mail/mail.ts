@@ -73,7 +73,7 @@ export interface IMail {
      *
      * @param fields
      */
-    setData(fields: Options): IMail;
+    setData(fields: Options & JsonObject): IMail;
 
     /**
      * Gets the html from the view and sets it as the view html.
