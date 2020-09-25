@@ -1,5 +1,6 @@
 import { IMessage } from './message';
 import { ISendable } from './sendable';
+import { IQueableTask } from '../queue';
 import { ILaterTime } from './laterTime';
 
 export interface IDispatcher<T extends ISendable = IMessage> {
@@ -16,5 +17,5 @@ export interface IDispatcher<T extends ISendable = IMessage> {
      * @param message
      * @param later
      */
-    later(message: T, later: ILaterTime): void;
+    later(message: T & IQueableTask, later: ILaterTime): void;
 }
