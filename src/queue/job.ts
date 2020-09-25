@@ -1,14 +1,24 @@
-import { IQueable } from './queable';
+import { IQueableJob } from './queableJob';
+import { IJobMetaData } from './queableData';
 import { JsonObject } from '../core/keyValue';
 import { ILaterTime } from '../notifications';
 
-export interface IJob<T extends JsonObject = any> extends IQueable<T> {
+export interface IJob<T extends JsonObject = any> extends IQueableJob<T> {
     /**
      * Starts processing the job.
      *
      * @returns
      */
     process(): Promise<any>;
+
+    /**
+     * Returns the meta data of this job. This should include the
+     * job `fileName` and `export` property, so that we can recreate
+     * the job class at a later time.
+     *
+     * @returns
+     */
+    metaData(): IJobMetaData;
 
     /**
      * Perform some action when the job processes completely.
