@@ -1,5 +1,21 @@
 import { JsonObject } from '../core/keyValue';
 
+export interface IJobMetaData {
+    /**
+     * The path to the job file.
+     *
+     * @property
+     */
+    fileName: string;
+
+    /**
+     * Job class export name in the file.
+     *
+     * @property
+     */
+    export: string;
+}
+
 export interface IQueableData<T extends JsonObject> {
     /**
      * Contains the data needed for processing the queued job.
@@ -13,19 +29,5 @@ export interface IQueableData<T extends JsonObject> {
      *
      * @property
      */
-    __meta: {
-        /**
-         * The path to the job file.
-         *
-         * @property
-         */
-        fileName: string;
-
-        /**
-         * Job class export name in the file.
-         *
-         * @property
-         */
-        export: string;
-    };
+    __meta: IJobMetaData;
 }
