@@ -1,6 +1,7 @@
+import { JsonObject } from '../core/keyValue';
 import { Options } from 'nodemailer/lib/mailer';
 
-export interface IJsonMail {
+export interface IJsonMail extends JsonObject {
     /**
      * The channel through which the `MailMessage` has to be delivered.
      *
@@ -14,5 +15,5 @@ export interface IJsonMail {
      *
      * @property
      */
-    mail: Options;
+    mail: Options & JsonObject;
 }
