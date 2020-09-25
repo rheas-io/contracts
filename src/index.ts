@@ -2,6 +2,15 @@ import { ClassOf } from './core/class';
 import { IRequest } from './core/request';
 import { IResponse } from './core/response';
 import { IDbConnector } from './database/connector';
-import { KeyValue, AnyObject, StringObject } from './core/keyValue';
+import { KeyValue, AnyObject, JsonObject, StringObject } from './core/keyValue';
 
-export { ClassOf, IDbConnector, KeyValue, AnyObject, StringObject, IRequest, IResponse };
+export {
+    ClassOf,
+    IRequest,
+    IResponse,
+    KeyValue,
+    AnyObject,
+    JsonObject,
+    StringObject,
+    IDbConnector,
+};
