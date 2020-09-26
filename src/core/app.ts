@@ -2,7 +2,19 @@ import { IServer } from './server';
 import { IGetter } from './getter';
 import { IServiceManager } from '../services';
 import { IContainer } from '../container/container';
-import { IAppKeys } from './containerKeys';
+
+export type IAppServiceKeys =
+    | 'env'
+    | 'configs'
+    | 'services'
+    | 'db'
+    | 'router'
+    | 'url'
+    | 'cli'
+    | 'mail'
+    | 'view'
+    | 'hash'
+    | 'encrypt';
 
 export interface IApp extends IContainer, IServer {
     /**
@@ -74,5 +86,6 @@ export interface IApp extends IContainer, IServer {
      *
      * @param key
      */
-    get(key: IAppKeys | string): any;
+    get(key: IAppServiceKeys): any;
+    get(key: string): any;
 }

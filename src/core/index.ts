@@ -8,15 +8,12 @@ import { IAttributeManager } from './attribute';
 import { IServerCreator } from './serverCreator';
 import { IRequestParams } from './requestParams';
 import { IRequestContent } from './requestContent';
-import { IAppKeys, IRequestKeys } from './containerKeys';
 
 export {
     IApp,
     IGetter,
     IHeaders,
-    IAppKeys,
     IRedirector,
-    IRequestKeys,
     IRequestInput,
     ICacheManager,
     IServerCreator,

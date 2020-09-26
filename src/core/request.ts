@@ -1,4 +1,3 @@
-import { IApp } from './app';
 import { IRoute } from '../routes';
 import { IHeaders } from './headers';
 import { IResponse } from './response';
@@ -7,12 +6,14 @@ import { IncomingMessage } from 'http';
 import { IContainer } from '../container';
 import { IRedirector } from './redirector';
 import { ICookieManager } from '../cookies';
-import { ISession, ISessionManager } from '../sessions';
+import { IApp, IAppServiceKeys } from './app';
 import { IRequestInput } from './requestInput';
 import { IRequestParams } from './requestParams';
 import { IRequestComponent } from '../routes/uri';
 import { IRequestContent } from './requestContent';
-import { IAppKeys, IRequestKeys } from './containerKeys';
+import { ISession, ISessionManager } from '../sessions';
+
+export type IRequestServiceKeys = IAppServiceKeys | 'cookie' | 'session' | 'redirect';
 
 export interface IRequest extends IncomingMessage, IContainer {
     /**
@@ -209,5 +210,6 @@ export interface IRequest extends IncomingMessage, IContainer {
      *
      * @param key
      */
-    get(key: IAppKeys | IRequestKeys | string): any;
+    get(key: IRequestServiceKeys): any;
+    get(key: string): any;
 }
