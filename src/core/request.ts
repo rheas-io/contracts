@@ -12,6 +12,7 @@ import { IRequestInput } from './requestInput';
 import { IRequestParams } from './requestParams';
 import { IRequestComponent } from '../routes/uri';
 import { IRequestContent } from './requestContent';
+import { IAppKeys, IRequestKeys } from './containerKeys';
 
 export interface IRequest extends IncomingMessage, IContainer {
     /**
@@ -84,9 +85,9 @@ export interface IRequest extends IncomingMessage, IContainer {
     /**
      * Returns the current session if the request is CSRF protected. Otherwise
      * returns false.
-     * 
+     *
      * Throws an exception when the session manager is not registered.
-     * 
+     *
      * @returns
      */
     isCsrfProtected(): ISession | false;
@@ -200,4 +201,13 @@ export interface IRequest extends IncomingMessage, IContainer {
      * @return string
      */
     getRealMethod(): string;
+
+    /**
+     * Returns the binding stored in this container. Throws an exception
+     * if no binding is registered for the key, or there are any error
+     * resolving the binding.
+     *
+     * @param key
+     */
+    get(key: IAppKeys | IRequestKeys | string): any;
 }

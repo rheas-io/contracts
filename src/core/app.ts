@@ -2,6 +2,7 @@ import { IServer } from './server';
 import { IGetter } from './getter';
 import { IServiceManager } from '../services';
 import { IContainer } from '../container/container';
+import { IAppKeys } from './containerKeys';
 
 export interface IApp extends IContainer, IServer {
     /**
@@ -65,4 +66,13 @@ export interface IApp extends IContainer, IServer {
      * @param folder
      */
     path(folder?: string): string;
+
+    /**
+     * Returns the binding stored in this container. Throws an exception
+     * if no binding is registered for the key, or there are any error
+     * resolving the binding.
+     *
+     * @param key
+     */
+    get(key: IAppKeys | string): any;
 }
