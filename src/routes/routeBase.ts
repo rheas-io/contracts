@@ -53,5 +53,5 @@ export interface IRouteBase {
      *
      * @returns
      */
-    excludedMiddlewares(): string[];
+    excludedMiddlewares(): Set<string>;
 }
