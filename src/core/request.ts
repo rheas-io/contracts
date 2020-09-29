@@ -6,14 +6,18 @@ import { IncomingMessage } from 'http';
 import { IContainer } from '../container';
 import { IRedirector } from './redirector';
 import { ICookieManager } from '../cookies';
-import { IApp, IAppServiceKeys } from './app';
 import { IRequestInput } from './requestInput';
 import { IRequestParams } from './requestParams';
 import { IRequestComponent } from '../routes/uri';
 import { IRequestContent } from './requestContent';
+import { IApp, InternalAppBindings } from './app';
 import { ISession, ISessionManager } from '../sessions';
 
-export type IRequestServiceKeys = IAppServiceKeys | 'cookie' | 'session' | 'redirect';
+export type InternalRequestBindings =
+    | InternalAppBindings
+    | 'cookie'
+    | 'session'
+    | 'redirect';
 
 export interface IRequest extends IncomingMessage, IContainer {
     /**
@@ -210,6 +214,6 @@ export interface IRequest extends IncomingMessage, IContainer {
      *
      * @param key
      */
-    get(key: IRequestServiceKeys): any;
+    get(key: InternalRequestBindings): any;
     get(key: string): any;
 }

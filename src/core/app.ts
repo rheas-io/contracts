@@ -3,7 +3,8 @@ import { IGetter } from './getter';
 import { IServiceManager } from '../services';
 import { IContainer } from '../container/container';
 
-export type IAppServiceKeys =
+export type InternalAppBindings =
+    | 'kernal'
     | 'env'
     | 'configs'
     | 'services'
@@ -86,6 +87,6 @@ export interface IApp extends IContainer, IServer {
      *
      * @param key
      */
-    get(key: IAppServiceKeys): any;
+    get(key: InternalAppBindings): any;
     get(key: string): any;
 }
