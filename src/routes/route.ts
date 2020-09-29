@@ -12,13 +12,6 @@ export interface IRoute extends IRouteBase {
     name(name: string): IRoute;
 
     /**
-     * Sets the path of the route.
-     *
-     * @param name
-     */
-    path(name: string): IRoute;
-
-    /**
      * Sets the HTTP methods supported by this route.
      *
      * @param methods

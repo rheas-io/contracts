@@ -5,9 +5,9 @@ export interface IRouteGroup extends IRouteBase {
     /**
      * Sets the route group prefix
      *
-     * @param path
+     * @param prefix
      */
-    prefix(path: string): IRoute;
+    prefix(prefix: string): IRouteGroup;
 
     /**
      * Returns the group prefix.
