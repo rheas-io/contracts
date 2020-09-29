@@ -1,56 +1,79 @@
 import { IUriComponent } from './uri';
+import { IRouteBase } from './routeBase';
+import { IRouteGroup } from './routeGroup';
 import { IRequestHandler } from './requestHandler';
 
-export interface IRoute {
-    routes(...routes: IRoute[]): IRoute;
-
-    routeMiddlewares(): string[];
-
-    middlewaresToResolve(): string[];
-
-    routePath(): string;
-
-    routeDomain(): string;
-
-    routeEndpoints(): IRoute[];
-
-    isHttpRoute(): boolean;
-
-    methods(methods: string | string[]): IRoute;
-
-    action(action: string | IRequestHandler): IRoute;
-
+export interface IRoute extends IRouteBase {
+    /**
+     * Sets the name of the route
+     *
+     * @param name
+     */
     name(name: string): IRoute;
 
-    prefix(name: string): IRoute;
+    /**
+     * Sets the path of the route.
+     *
+     * @param name
+     */
+    path(name: string): IRoute;
 
-    domain(domain: string): IRoute;
+    /**
+     * Sets the HTTP methods supported by this route.
+     *
+     * @param methods
+     */
+    methods(methods: string | string[]): IRoute;
 
-    middleware(...middlewares: string[]): IRoute;
+    /**
+     * Sets the controller action to be performed by this route.
+     *
+     * @param action
+     */
+    action(action: string | IRequestHandler): IRoute;
 
-    withoutMiddleware(...middlewares: string[]): IRoute;
+    /**
+     * Sets the group properties on the route like setting perfixes, prepending
+     * middlewares, updating excluded middlewares etc.
+     *
+     * @param group
+     */
+    setGroupProperties(group: IRouteGroup): IRoute;
 
-    http(httpRoute?: boolean): IRoute;
-
-    setParent(route: IRoute): void;
-
-    getMethods(): string[];
-
+    /**
+     * Returns the name of the route.
+     *
+     * @returns
+     */
     getName(): string;
 
+    /**
+     * Returns the path to which the route is assigned.
+     *
+     * @returns
+     */
     getPath(): string;
 
+    /**
+     * Returns the HTTP methods supported by the route.
+     *
+     * @returns
+     */
+    getMethods(): string[];
+
+    /**
+     * Returns the action to be performed when a request matches the
+     * route.
+     *
+     * @returns
+     */
     getAction(): string | IRequestHandler;
 
-    getParent(): IRoute | null;
-
-    getChildRoutes(): IRoute[];
-
+    /**
+     * Returns the uri components of this route ie route path is split by `/`
+     * and returns each segment as a UriComponent object.
+     *
+     * @returns
+     */
     getUriComponents(): IUriComponent[];
-
-    getExcludedMiddlewares(): string[];
-
-    isEndpoint(): boolean;
-
-    hasParent(): boolean;
 }
