@@ -21,7 +21,7 @@ export interface IRouteGroup extends IRouteBase {
      *
      * @param routes
      */
-    routes(routes: Array<IRoute | IRouteGroup>): IRouteGroup;
+    routes(...routes: (IRoute | IRouteGroup)[]): IRouteGroup;
 
     /**
      * Returns all the routes with group properties prepended to it.
