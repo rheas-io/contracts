@@ -17,6 +17,13 @@ export interface IRouteGroup extends IRouteBase {
     getPrefix(): string;
 
     /**
+     * Routes in this route group.
+     *
+     * @param routes
+     */
+    routes(routes: Array<IRoute | IRouteGroup>): this;
+
+    /**
      * Returns all the routes with group properties prepended to it.
      *
      * @returns
