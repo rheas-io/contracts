@@ -1,31 +1,31 @@
-export interface IRouteBase {
+export interface IRouteBase<T extends IRouteBase<T>> {
     /**
      * Sets the domian of this route
      *
      * @param domain
      */
-    domain(domain: string): IRouteBase;
+    domain(domain: string): T;
 
     /**
      * Sets the route to allow http requests.
      *
      * @return this
      */
-    http(httpRoute?: boolean): IRouteBase;
+    http(httpRoute?: boolean): T;
 
     /**
      * Sets the middlewares to be used by this route or route group.
      *
      * @param middlewares
      */
-    middleware(...middlewares: string[]): IRouteBase;
+    middleware(...middlewares: string[]): T;
 
     /**
      * Sets the excluded middlewares of this route.
      *
      * @param middlewares
      */
-    withoutMiddleware(...middlewares: string[]): IRouteBase;
+    withoutMiddleware(...middlewares: string[]): T;
 
     /**
      * Returns the domain of this route/group.

@@ -3,7 +3,7 @@ import { IRouteBase } from './routeBase';
 import { IRouteGroup } from './routeGroup';
 import { IRequestHandler } from './requestHandler';
 
-export interface IRoute extends IRouteBase {
+export interface IRoute extends IRouteBase<IRoute> {
     /**
      * Sets the name of the route
      *

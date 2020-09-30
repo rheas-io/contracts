@@ -1,7 +1,7 @@
 import { IRoute } from './route';
 import { IRouteBase } from './routeBase';
 
-export interface IRouteGroup extends IRouteBase {
+export interface IRouteGroup extends IRouteBase<IRouteGroup> {
     /**
      * Sets the route group prefix
      *
