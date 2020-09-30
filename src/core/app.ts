@@ -4,18 +4,20 @@ import { IServiceManager } from '../services';
 import { IContainer } from '../container/container';
 
 export type InternalAppBindings =
-    | 'kernal'
-    | 'env'
-    | 'configs'
-    | 'services'
     | 'db'
-    | 'router'
+    | 'env'
     | 'url'
     | 'cli'
     | 'mail'
     | 'view'
     | 'hash'
-    | 'encrypt';
+    | 'error'
+    | 'router'
+    | 'kernal'
+    | 'configs'
+    | 'encrypt'
+    | 'services'
+    | 'middlewares';
 
 export interface IApp extends IContainer, IServer {
     /**
@@ -35,8 +37,8 @@ export interface IApp extends IContainer, IServer {
     /**
      * Registers a callback that has to be executed after booting all the
      * application services.
-     * 
-     * @param callback 
+     *
+     * @param callback
      */
     booted(callback: () => any): void;
 

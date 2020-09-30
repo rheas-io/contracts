@@ -1,16 +1,19 @@
 export interface IServiceProvider {
     /**
-     * Registers the service provider to the container. Avoid adding
-     * code that require other services inside this function, as they
-     * may not be registered yet. Use boot function for that purpose.
+     * Registers the service provider to the container. Avoid adding cyclic
+     * dependency when registering services or else they won't be registered
+     * and loop forever.
+     * 
+     * A `registered` event will be emitted after registering the service.
      */
     register(): void;
 
     /**
-     * Boots the service provider. Inside the boot function
-     * all the app service providers will be registered. So, add
-     * the functions that require other service provider inside this
-     * function.
+     * Boot function is executed after the service is registered. So any effect
+     * carried out using the `registered` callback will be available in the
+     * boot function.
+     * 
+     * A `booted` event will be emitted after service boot.
      */
     boot(): void;
 
