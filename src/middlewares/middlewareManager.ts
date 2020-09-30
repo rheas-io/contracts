@@ -20,4 +20,14 @@ export interface IMiddlewareManager {
      * @param nameParam
      */
     resolveMiddleware([name, params]: INameParams): IMiddleware;
+
+    /**
+     * Returns the global middleware list. 
+     * 
+     * All the request will go through this global middleware list before 
+     * dispatching to the router.
+     *
+     * @returns
+     */
+    globalMiddlewares(): string[];
 }
