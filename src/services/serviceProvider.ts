@@ -1,9 +1,11 @@
-export interface IServiceProvider {
+import { IServiceListener } from './serviceListener';
+
+export interface IServiceProvider extends IServiceListener {
     /**
      * Registers the service provider to the container. Avoid adding cyclic
      * dependency when registering services or else they won't be registered
      * and loop forever.
-     * 
+     *
      * A `registered` event will be emitted after registering the service.
      */
     register(): void;
@@ -12,7 +14,7 @@ export interface IServiceProvider {
      * Boot function is executed after the service is registered. So any effect
      * carried out using the `registered` callback will be available in the
      * boot function.
-     * 
+     *
      * A `booted` event will be emitted after service boot.
      */
     boot(): void;

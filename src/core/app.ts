@@ -2,6 +2,7 @@ import { IServer } from './server';
 import { IGetter } from './getter';
 import { IServiceManager } from '../services';
 import { IContainer } from '../container/container';
+import { IServiceListener } from '../services/serviceListener';
 
 export type InternalAppBindings =
     | 'db'
@@ -19,7 +20,7 @@ export type InternalAppBindings =
     | 'services'
     | 'middlewares';
 
-export interface IApp extends IContainer, IServer {
+export interface IApp extends IContainer, IServer, IServiceListener {
     /**
      * Starts the application. Boots all the registered services,
      * creates a database connection and listen for requests.
@@ -33,14 +34,6 @@ export interface IApp extends IContainer, IServer {
      * listening to requests.
      */
     bootServices(): void;
-
-    /**
-     * Registers a callback that has to be executed after booting all the
-     * application services.
-     *
-     * @param callback
-     */
-    booted(callback: () => any): void;
 
     /**
      * Returns the application environment variable manager.
