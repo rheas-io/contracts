@@ -1,5 +1,6 @@
 import { IRoute } from './route';
 import { IRequest } from '../core/request';
+import { IRouteGroup } from './routeGroup';
 import { IResponse } from '../core/response';
 import { IMiddleware, INameParams } from '../middlewares';
 
@@ -73,7 +74,7 @@ export interface IRouter {
      *
      * @param routes
      */
-    registerRoutes(routes: IRoute[]): IRouter;
+    registerRoutes(...routes: (IRoute | IRouteGroup)[]): IRouter;
 
     /**
      * Adds a route to the end of the routes list.
