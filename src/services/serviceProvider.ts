@@ -1,5 +1,3 @@
-import { InstanceHandler } from '../container';
-
 export interface IServiceProvider {
     /**
      * Registers the service provider to the container. Avoid adding

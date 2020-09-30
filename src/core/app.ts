@@ -33,6 +33,14 @@ export interface IApp extends IContainer, IServer {
     bootServices(): void;
 
     /**
+     * Registers a callback that has to be executed after booting all the
+     * application services.
+     * 
+     * @param callback 
+     */
+    booted(callback: () => any): void;
+
+    /**
      * Returns the application environment variable manager.
      *
      * @returns
