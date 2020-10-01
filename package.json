@@ -25,6 +25,7 @@
   "devDependencies": {
     "@types/mongoose": "^5.7.36",
     "@types/node": "^13.13.4",
+    "@types/nodemailer": "^6.4.0",
     "typescript": "^3.8.3"
   },
   "author": "Kalesh Kaladharan",
@@ -36,8 +37,5 @@
   "bugs": {
     "url": "https://github.com/rheas-io/contracts/issues"
   },
-  "homepage": "https://github.com/rheas-io/contracts#readme",
-  "dependencies": {
-    "@types/nodemailer": "^6.4.0"
-  }
+  "homepage": "https://github.com/rheas-io/contracts#readme"
 }
