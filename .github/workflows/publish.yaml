@@ -11,7 +11,8 @@ jobs:
       - run: npm install
       - run: npm run build
       - name: publish
-        working-directory: ./build
         env:
           NODE_AUTH_TOKEN: ${{secrets.NPM_TOKEN}}
-        run: npm publish build --access public
+        run: |
+          cd ./build
+          npm publish build --access public
