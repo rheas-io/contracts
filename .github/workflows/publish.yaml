@@ -15,4 +15,4 @@ jobs:
           NODE_AUTH_TOKEN: ${{secrets.NPM_TOKEN}}
         run: |
           cd ./build
-          npm publish build --access public
+          npm publish --access public
