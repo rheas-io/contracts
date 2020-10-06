@@ -18,9 +18,28 @@ export type InternalAppBindings =
     | 'configs'
     | 'encrypt'
     | 'services'
-    | 'middlewares';
+    | 'middlewares'
+    | 'path.root'
+    | 'path.env'
+    | 'path.configs'
+    | 'path.assets'
+    | 'path.sessions';
 
 export interface IApp extends IContainer, IServer, IServiceListener {
+    /**
+     * Sets the app running in console flag to true.
+     *
+     * @returns
+     */
+    setRunningInConsole(): IApp;
+
+    /**
+     * Returns true if the application is running in console.
+     *
+     * @returns
+     */
+    isRunningInConsole(): boolean;
+
     /**
      * Starts the application. Boots all the registered services,
      * creates a database connection and listen for requests.
