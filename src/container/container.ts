@@ -17,7 +17,7 @@ export interface IContainer {
      * @param callback
      * @param singleton
      */
-    bind(name: string, resolver: InstanceHandler, singleton: boolean): IContainerInstance;
+    tie(name: string, resolver: InstanceHandler, singleton: boolean): IContainerInstance;
 
     /**
      * Adds an instance to this container. Any type of object can
