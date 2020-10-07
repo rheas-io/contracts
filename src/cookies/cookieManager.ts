@@ -52,4 +52,12 @@ export interface ICookieManager extends IGetter {
      * @returns
      */
     queuedCookies(): KeyValue<ICookie>;
+
+    /**
+     * Returns the binding stored in this contract.
+     *
+     * @param key
+     * @param defaultValue
+     */
+    get(key: string, defaultValue?: ICookie | null): ICookie | null;
 }
