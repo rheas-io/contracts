@@ -1,6 +1,7 @@
 import { IApp } from './app';
 import { IGetter } from './getter';
 import { IKernal } from './kernal';
+import { IMixHandler } from './mix';
 import { IRequest } from './request';
 import { IHeaders } from './headers';
 import { IResponse } from './response';
@@ -19,6 +20,7 @@ export {
     IRequest,
     IHeaders,
     IResponse,
+    IMixHandler,
     IRedirector,
     IRequestInput,
     ICacheManager,
