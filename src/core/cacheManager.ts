@@ -148,4 +148,12 @@ export interface ICacheManager {
      * @param key
      */
     getCacheControl(key: string, defaultValue?: any): string;
+
+    /**
+     * Returns the cache-control value that has to be set with every response.
+     * If none is explicitely set, a generous `private, no-cache` is returned.
+     *
+     * @returns
+     */
+    computedCacheControl(): string;
 }

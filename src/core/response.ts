@@ -1,3 +1,4 @@
+import { IHeaders } from './headers';
 import { ServerResponse } from 'http';
 import { AnyObject } from './keyValue';
 import { ICacheManager } from './cacheManager';
@@ -27,7 +28,7 @@ export interface IResponse extends ServerResponse {
 
     /**
      * Sets an html view as the content.
-     * 
+     *
      * @param viewPath path to the view/pug file
      * @param data local data to be used during pug render.
      */
@@ -54,7 +55,7 @@ export interface IResponse extends ServerResponse {
      *
      * @returns
      */
-    cache(): ICacheManager;
+    cache(): IHeaders & ICacheManager;
 
     /**
      * Sets status as 304 and removes content and headers that are not
