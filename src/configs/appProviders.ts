@@ -9,6 +9,7 @@ export type IAppProviders = KeyValue<ClassOf<IServiceProvider>> & {
     url: ClassOf<IServiceProvider>;
     cli: ClassOf<IServiceProvider>;
     mail: ClassOf<IServiceProvider>;
+    core: ClassOf<IServiceProvider>;
     view: ClassOf<IServiceProvider>;
     hash: ClassOf<IServiceProvider>;
     error: ClassOf<IServiceProvider>;

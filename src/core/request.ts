@@ -9,12 +9,15 @@ import { ICookieManager } from '../cookies';
 import { IRequestInput } from './requestInput';
 import { IRequestParams } from './requestParams';
 import { IRequestComponent } from '../routes/uri';
-import { IRequestContent } from './requestContent';
 import { IApp, InternalAppBindings } from './app';
+import { IRequestContent } from './requestContent';
 import { ISession, ISessionManager } from '../sessions';
 
 export type InternalRequestBindings =
     | InternalAppBindings
+    | 'app'
+    | 'response'
+    | 'services'
     | 'cookie'
     | 'session'
     | 'redirect';

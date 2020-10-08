@@ -10,6 +10,7 @@ export type InternalAppBindings =
     | 'url'
     | 'cli'
     | 'mail'
+    | 'core'
     | 'view'
     | 'hash'
     | 'error'
