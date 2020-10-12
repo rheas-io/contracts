@@ -1,7 +1,6 @@
 import { IRoute } from '../routes';
 import { IHeaders } from './headers';
 import { IResponse } from './response';
-import { AnyObject } from './keyValue';
 import { IncomingMessage } from 'http';
 import { IContainer } from '../container';
 import { IRedirector } from './redirector';
@@ -12,6 +11,7 @@ import { IRequestComponent } from '../routes/uri';
 import { IApp, InternalAppBindings } from './app';
 import { IRequestContent } from './requestContent';
 import { ISession, ISessionManager } from '../sessions';
+import { AnyObject, KeyValue, StringObject } from './keyValue';
 
 export type InternalRequestBindings =
     | InternalAppBindings
@@ -44,6 +44,16 @@ export interface IRequest extends IncomingMessage, IContainer {
      * @returns IRedirector
      */
     redirect(): IRedirector;
+
+    /**
+     * Validates a request for the given rules. If it does not pass, throws a
+     * validation exception.
+     *
+     * @param rules
+     * @param messages
+     * @param aliases
+     */
+    validate(rules: StringObject, messages?: KeyValue<StringObject>, aliases?: StringObject): void;
 
     /**
      * Returns the cookie manager.
