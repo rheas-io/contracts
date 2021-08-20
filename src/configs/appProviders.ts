@@ -7,7 +7,6 @@ export type IAppProviders = KeyValue<ClassOf<IServiceProvider>> & {
     // provider configuration file.
     db: ClassOf<IServiceProvider>;
     url: ClassOf<IServiceProvider>;
-    cli: ClassOf<IServiceProvider>;
     mail: ClassOf<IServiceProvider>;
     core: ClassOf<IServiceProvider>;
     view: ClassOf<IServiceProvider>;
@@ -21,6 +20,7 @@ export type IAppProviders = KeyValue<ClassOf<IServiceProvider>> & {
     // config files. These providers are already registered
     // in the container itself.
     env?: never;
+    cli?: never;
     configs?: never;
     services?: never;
 };
