@@ -1,6 +1,6 @@
 {
   "name": "@rheas/contracts",
-  "version": "0.0.9",
+  "version": "0.0.10",
   "description": "Rheas frameworks general contracts/interfaces",
   "main": "index.js",
   "keywords": [
