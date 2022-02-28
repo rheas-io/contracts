@@ -77,6 +77,13 @@ export interface IRequest extends IncomingMessage, IContainer {
     reqHeaders(): IHeaders;
 
     /**
+     * Returns the bearer token from the request
+     *
+     * @returns
+     */
+     bearerToken(): string;
+
+    /**
      * Returns a single string value from the header. An empty
      * string is returned if no header is defined.
      *
